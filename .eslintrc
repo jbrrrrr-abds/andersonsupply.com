@@ -1,0 +1,27 @@
+{
+  "parser": "babel-eslint",
+  "extends": "@ueno/eslint-config/react",
+  "plugins": [
+    "react-hooks"
+  ],
+  "rules": {
+    "jsx-a11y/anchor-is-valid": [
+      "off"
+    ],
+    "react/prop-types": [
+      "off"
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": [
+          "node_modules",
+          "src/"
+        ]
+      }
+    }
+  }
+}
