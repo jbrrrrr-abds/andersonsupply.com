@@ -2,12 +2,14 @@
   "parser": "babel-eslint",
   "extends": "@ueno/eslint-config/react",
   "plugins": [
-    "react-hooks"
+    "react-hooks",
+    "prettier"
   ],
   "rules": {
     "jsx-a11y/anchor-is-valid": [
       "off"
     ],
+    "prettier/prettier": ["error"],
     "react/prop-types": [
       "off"
     ],

@@ -1,5 +1,3 @@
 {
-  "extends": [
-    "@gulls/stylelint-config/styled-components"
-  ],
+  "extends": "stylelint-config-standard-scss"
 }

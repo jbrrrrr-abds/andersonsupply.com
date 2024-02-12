@@ -77,7 +77,7 @@ const MarqueeBlock = ({
 }) => {
   const marqueeTL = useRef();
 
-  const killFunction = () => {
+  const killFunction = useCallback(() => {
     if (ScrollTrigger.getById(`${marqueeID}-marquee-scroll-trigger`)) {
       ScrollTrigger.getById(`${marqueeID}-marquee-scroll-trigger`).kill();
     }
@@ -85,58 +85,60 @@ const MarqueeBlock = ({
     if (marqueeTL.current) {
       marqueeTL.current.kill();
     }
-  };
+  }, [marqueeID, marqueeTL]);
 
-  const Marquee = useCallback((node) => {
-    if (!node) return;
+  const Marquee = useCallback(
+    (node) => {
+      if (!node) return;
 
-    gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(ScrollTrigger);
 
-    const items = node.querySelectorAll('.marquee-item');
+      const items = node.querySelectorAll(".marquee-item");
 
-    const setupMarquee = () => {
-      gsap.set(items, { x: 0 });
+      const setupMarquee = () => {
+        gsap.set(items, { x: 0 });
 
-      killFunction();
+        killFunction();
 
-      let width = 0;
-      let offset = 0;
+        let width = 0;
+        let offset = 0;
 
-      if (items.length) {
-        items.forEach((el, i) => {
-          const itemWidth = gsap.getProperty(el, 'width');
+        if (items.length) {
+          items.forEach((el, i) => {
+            const itemWidth = gsap.getProperty(el, "width");
 
-          if (i > 0) {
-            gsap.set(el, { x: -1 * (itemWidth + offset) });
-            offset += itemWidth;
-          }
+            if (i > 0) {
+              gsap.set(el, { x: -1 * (itemWidth + offset) });
+              offset += itemWidth;
+            }
 
-          width += itemWidth;
+            width += itemWidth;
+          });
+        }
+
+        marqueeTL.current = gsap.to(items, {
+          x: `-=${width}`,
+          repeat: -1,
+          duration: 18,
+          ease: "none",
+          modifiers: {
+            x: gsap.utils.unitize((x) => gsap.utils.wrap(-width, 0, x)),
+          },
         });
-      }
 
-      marqueeTL.current = gsap.to(items, {
-        x: `-=${width}`,
-        repeat: -1,
-        duration: 18,
-        ease: 'none',
-        modifiers: {
-          x: gsap.utils.unitize(x => gsap.utils.wrap(-width, 0, x)),
-        },
-      });
+        ScrollTrigger.create({
+          trigger: node,
+          animation: marqueeTL.current,
+          start: "top bottom",
+          end: "bottom top",
+          id: `${marqueeID}-marquee-scroll-trigger`,
+        });
+      };
 
-      ScrollTrigger.create({
-        trigger: node,
-        animation: marqueeTL.current,
-        start: 'top bottom',
-        end: 'bottom top',
-        id: `${marqueeID}-marquee-scroll-trigger`,
-      });
-    };
-
-    ScrollTrigger.addEventListener('refresh', setupMarquee);
-
-  }, []);
+      ScrollTrigger.addEventListener("refresh", setupMarquee);
+    },
+    [killFunction, marqueeID]
+  );
 
   const pauseMarquee = () => {
     if (!marqueeTL.current) return;
@@ -149,9 +151,12 @@ const MarqueeBlock = ({
     gsap.fromTo(marqueeTL.current, { timeScale: 0 }, { timeScale: 1, ease: 'power1.in' });
   };
 
-  useEffect(() => () => {
-    killFunction();
-  }, []);
+  useEffect(
+    () => () => {
+      killFunction();
+    },
+    [killFunction]
+  );
 
   return (
     <Wrapper ref={Marquee}>
