@@ -142,64 +142,53 @@ const Hero = ({
     <StyledSection bgColor="brand-black">
       <Container>
         <Content>
+          {title ? <h1>{title}</h1> : null}
 
-          {title ?
-            <h1>{title}</h1>
-            :
-            null
-          }
+          {subTitle ? <JumboText as={Ninety}>{subTitle}</JumboText> : null}
 
-          {subTitle ?
-            <JumboText as={Ninety}>
-              {subTitle}
-            </JumboText>
-            :
-            null
-          }
-
-          {description ?
-            <TextBlock content={description} />
-            :
-            null
-          }
+          {description ? <TextBlock content={description} /> : null}
 
           <Arrow>
-            <UnstyledButton onClick={scrollToProcess} aria-label="Go to next section">
-              <svg width="16" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 27.5l-1.41-1.41L9 31.67V0H7v31.67l-5.58-5.59L0 27.5l8 8 8-8z" fill="currentColor" />
+            <UnstyledButton
+              onClick={scrollToProcess}
+              aria-label="Go to next section"
+            >
+              <svg
+                width="16"
+                height="36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 27.5l-1.41-1.41L9 31.67V0H7v31.67l-5.58-5.59L0 27.5l8 8 8-8z"
+                  fill="currentColor"
+                />
               </svg>
             </UnstyledButton>
           </Arrow>
         </Content>
       </Container>
 
-      <Image>
-
-        {image ?
+      <Image alt="">
+        {image ? (
           <RatioImg
             src={`${image.url}&w=967&h=580&fit=crop&q=85&fm=pjpg`}
             alt={image.alt}
             width={967}
             height={580}
           />
-          :
-          null
-        }
+        ) : null}
 
-        {videoId ?
+        {videoId ? (
           <Button
             onClick={() => {
               toggleModal(videoId);
             }}
             aria-label="Play video"
           />
-          :
-          null
-        }
-
+        ) : null}
       </Image>
       <ScrollTarget id="our-process" />
-
     </StyledSection>
   );
 };

@@ -1,14 +1,14 @@
-import React, { useCallback, useRef, useEffect } from 'react';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import styled from 'styled-components';
-import { rem } from 'polished';
-import screen from 'superior-mq';
-import { linkResolver } from '../util/prismicHelpers';
-import { bp } from '../styles/helpers';
-import { OneSixty } from './Jumbo';
-import Bolt from './Bolt';
-import InlineLink from './InlineLink';
+import React, { useCallback, useRef, useEffect } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import styled from "styled-components";
+import { rem } from "polished";
+import screen from "superior-mq";
+import { linkResolver } from "../util/prismicHelpers";
+import { bp } from "../styles/helpers";
+import { OneSixty } from "./Jumbo";
+import Bolt from "./Bolt";
+import InlineLink from "./InlineLink";
 
 const Wrapper = styled.div`
   overflow: hidden;
@@ -17,13 +17,19 @@ const Wrapper = styled.div`
   max-width: 100%;
   width: 100%;
 
-  ${screen.below(bp.desktopSm, `
+  ${screen.below(
+    bp.desktopSm,
+    `
     height: 150px;
-  `)}
+  `,
+  )}
 
-  ${screen.below(bp.portrait, `
+  ${screen.below(
+    bp.portrait,
+    `
     height: 105px;
-  `)}
+  `,
+  )}
 `;
 
 const CTA = styled(InlineLink)`
@@ -34,22 +40,31 @@ const CTA = styled(InlineLink)`
   text-transform: uppercase;
   white-space: nowrap;
 
-  ${screen.below(bp.desktopSm, `
+  ${screen.below(
+    bp.desktopSm,
+    `
     padding: 22px;
-  `)}
+  `,
+  )}
 
-  ${screen.below(bp.portrait, `
+  ${screen.below(
+    bp.portrait,
+    `
     padding: 8px 22px 0;
-  `)}
+  `,
+  )}
 
   svg {
     display: block;
     max-width: 19px;
     margin: auto auto 10px;
 
-    ${screen.below(bp.portrait, `
+    ${screen.below(
+      bp.portrait,
+      `
        margin-bottom: 0;
-    `)}
+    `,
+    )}
   }
 `;
 
@@ -66,15 +81,15 @@ const Item = styled.div`
 `;
 
 const StyledOneSixty = styled(OneSixty)`
-  ${screen.below(bp.mobile, `
+  ${screen.below(
+    bp.mobile,
+    `
     font-size: ${rem(75)};
-  `)}
+  `,
+  )}
 `;
 
-const MarqueeBlock = ({
-  content,
-  marqueeID,
-}) => {
+const MarqueeBlock = ({ content, marqueeID }) => {
   const marqueeTL = useRef();
 
   const killFunction = useCallback(() => {
@@ -137,7 +152,7 @@ const MarqueeBlock = ({
 
       ScrollTrigger.addEventListener("refresh", setupMarquee);
     },
-    [killFunction, marqueeID]
+    [killFunction, marqueeID],
   );
 
   const pauseMarquee = () => {
@@ -148,28 +163,29 @@ const MarqueeBlock = ({
   const playMarquee = () => {
     if (!marqueeTL.current) return;
     marqueeTL.current.play();
-    gsap.fromTo(marqueeTL.current, { timeScale: 0 }, { timeScale: 1, ease: 'power1.in' });
+    gsap.fromTo(
+      marqueeTL.current,
+      { timeScale: 0 },
+      { timeScale: 1, ease: "power1.in" },
+    );
   };
 
   useEffect(
     () => () => {
       killFunction();
     },
-    [killFunction]
+    [killFunction],
   );
 
   return (
     <Wrapper ref={Marquee}>
-
-      {content?.first_text_content ?
+      {content?.first_text_content ? (
         <Item className="marquee-item">
           <StyledOneSixty>{content?.first_text_content}</StyledOneSixty>
         </Item>
-        :
-        null
-      }
+      ) : null}
 
-      {content?.link ?
+      {content?.link ? (
         <Item className="marquee-item">
           <CTA
             onMouseEnter={pauseMarquee}
@@ -180,19 +196,15 @@ const MarqueeBlock = ({
             {content?.link_text}
           </CTA>
         </Item>
-        :
-        null
-      }
+      ) : null}
 
-      {content?.second_text_content ?
+      {content?.second_text_content ? (
         <Item className="marquee-item">
           <StyledOneSixty>{content?.second_text_content}</StyledOneSixty>
         </Item>
-        :
-        null
-      }
+      ) : null}
 
-      {content?.link ?
+      {content?.link ? (
         <Item className="marquee-item">
           <CTA
             onMouseEnter={pauseMarquee}
@@ -203,19 +215,15 @@ const MarqueeBlock = ({
             {content?.link_text}
           </CTA>
         </Item>
-        :
-        null
-      }
+      ) : null}
 
-      {content?.third_text_content ?
+      {content?.third_text_content ? (
         <Item className="marquee-item">
           <StyledOneSixty>{content?.third_text_content}</StyledOneSixty>
         </Item>
-        :
-        null
-      }
+      ) : null}
 
-      {content?.link ?
+      {content?.link ? (
         <Item className="marquee-item">
           <CTA
             onMouseEnter={pauseMarquee}
@@ -226,10 +234,7 @@ const MarqueeBlock = ({
             {content?.link_text}
           </CTA>
         </Item>
-        :
-        null
-      }
-
+      ) : null}
     </Wrapper>
   );
 };

@@ -154,27 +154,25 @@ const MoreWork = ({
   return (
     <MoreWorkContainer bgColor="brand-white">
       <Header>
-
-        {title ?
-          <h2>{title}</h2>
-          :
-          null
-        }
+        {title ? <h2>{title}</h2> : null}
 
         <SlideArrowButton onClick={handleClick}>
-          <SlideArrow viewBox="0 0 32 8" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <SlideArrow
+            viewBox="0 0 32 8"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+          >
             <path d="M3.99 5H31.5V3H3.99V0L0 4l3.99 4V5z" fill="currentColor" />
           </SlideArrow>
         </SlideArrowButton>
       </Header>
       <ScrollWrapper ref={scrollerRef}>
-
         <Scroller className="scroller">
           {slides.map((slide, index) => (
             <Slide key={index}>
               <Image
-                src={slide.more_work_image?.url}
-                alt={slide.more_work_image?.alt}
+                src={slide.more_work_image?.url || ""}
+                alt={slide.more_work_image?.alt || ""}
                 width={397}
                 height={585}
               />

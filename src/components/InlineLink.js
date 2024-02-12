@@ -18,21 +18,19 @@ const InlineLink = ({
   if (!href) return null;
   const formatInternal = href.replace(siteUrl, '/');
 
-  return (
-    formatInternal.match(/^(https?:)?\/\/|mailto:/)
-      ?
-        <a
-          href={formatInternal}
-          target={target}
-          rel={target === '_blank' ? 'noreferrer noopener' : undefined}
-          {...rest}
-        >
-          {children}
-        </a>
-      :
-        <Link href={formatInternal} prefetch={prefetch}>
-          <a {...rest}>{children}</a>
-        </Link>
+  return formatInternal.match(/^(https?:)?\/\/|mailto:/) ? (
+    <a
+      href={formatInternal}
+      target={target}
+      rel={target === "_blank" ? "noreferrer noopener" : undefined}
+      {...rest}
+    >
+      {children}
+    </a>
+  ) : (
+    <Link href={formatInternal} prefetch={prefetch} legacybehavior>
+      <a {...rest}>{children}</a>
+    </Link>
   );
 };
 

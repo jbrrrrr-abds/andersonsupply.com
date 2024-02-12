@@ -183,7 +183,15 @@ const SlideArrow = styled.svg`
   color: inherit;
 `;
 
-Carousel.Dots = ({ slides = [], currentIndex, handleClick, className, isDark }) => {
+
+Carousel.Dots = ({
+  slides = [],
+  currentIndex,
+  handleClick,
+  className,
+  isDark,
+}) => {
+  Carousel.Dots.displayName = "CarouselDots";
   if (!slides || (slides && slides.length < 2)) return null;
 
   return (
@@ -195,7 +203,9 @@ Carousel.Dots = ({ slides = [], currentIndex, handleClick, className, isDark }) 
             aria-label={`Go to slide ${i + 1}`}
             aria-current={i === currentIndex}
             isDark={isDark}
-            onClick={() => { handleClick(i); }}
+            onClick={() => {
+              handleClick(i);
+            }}
           />
         </SlideDot>
       ))}
@@ -211,6 +221,7 @@ Carousel.Dots.propTypes = {
 };
 
 Carousel.Button = ({ slideCount, currentIndex, handleClick, action, isLeft, color }) => {
+  Carousel.Button.displayName = "CarouselButton";
   let nextIndex = null;
   const interval = action === 'next' ? 1 : -1;
 

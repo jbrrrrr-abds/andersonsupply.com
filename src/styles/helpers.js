@@ -1,18 +1,18 @@
 export const bp = {
-  desktopLg: '1800px',
-  desktop: '1680px',
-  desktopSm: '1440px',
-  laptop: '1380px',
-  laptopSm: '1240px',
-  tablet: '1024px',
-  portrait: '880px',
-  mobile: '767px',
-  mobileMid: '625px',
-  mobileSm: '580px',
-  mobileRealSm: '375px',
+  desktopLg: "1800px",
+  desktop: "1680px",
+  desktopSm: "1440px",
+  laptop: "1380px",
+  laptopSm: "1240px",
+  tablet: "1024px",
+  portrait: "880px",
+  mobile: "767px",
+  mobileMid: "625px",
+  mobileSm: "580px",
+  mobileRealSm: "375px",
 };
 
-export const hover = val => `
+export const hover = (val) => `
   @media(hover: hover) {
     &:hover {
       ${val}
@@ -27,12 +27,12 @@ export const hover = val => `
  * @param {number} offsetY The percentage to offset on the Y axis
  */
 export const absoCenter = (offsetX = 0, offsetY = 0) => {
-  let p = '';
-  let trans = '';
+  let p = "";
+  let trans = "";
 
   if (offsetX !== null) {
     p = `left: ${50 + offsetX}%;`;
-    trans = 'translateX(-50%)';
+    trans = "translateX(-50%)";
   }
 
   if (offsetY !== null) {

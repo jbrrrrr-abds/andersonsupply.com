@@ -18,7 +18,7 @@ function useThrottle(func, timeout, deps = []) {
   };
 
   // Cancel the timer when the deps change.
-  useEffect(() => cancel, deps);
+  useEffect(() => cancel, [deps]);
 
   // Return the throttled version of the function.
   return (...args) => {

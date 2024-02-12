@@ -1,15 +1,15 @@
 {
-  "parser": "babel-eslint",
-  "extends": "@ueno/eslint-config/react",
+  "extends": [
+    "next"
+  ],
   "plugins": [
-    "react-hooks",
-    "prettier"
+    "react-hooks"
   ],
   "rules": {
     "jsx-a11y/anchor-is-valid": [
       "off"
     ],
-    "prettier/prettier": ["error"],
+    "@next/next/no-img-element": "off",
     "react/prop-types": [
       "off"
     ],

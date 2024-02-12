@@ -48,32 +48,22 @@ const ImageWithText = ({
   className,
   image,
 }) => {
-  const width = image?.dimensions?.width;
-  const height = image?.dimensions?.height;
+  const width = image?.dimensions?.width || 0;
+  const height = image?.dimensions?.height || 0;
 
   return (
     <StyledGrid imageLeft={imageLeft} className={className}>
-
-      {image?.url ?
+      {image?.url ? (
         <Image
           width={width}
           height={height}
-          src={`${image?.url}&w=${width}&h=${height}&fit=crop&q=85&f=center`}
-          alt={image?.alt}
+          src={`${image?.url || ""}&w=${width}&h=${height}&fit=crop&q=85&f=center`}
+          alt={image?.alt || ""}
           imageLeft={imageLeft}
         />
-        :
-        null
-      }
+      ) : null}
 
-      {children ?
-        <Content imageLeft={imageLeft}>
-          {children}
-        </Content>
-        :
-        null
-      }
-
+      {children ? <Content imageLeft={imageLeft}>{children}</Content> : null}
     </StyledGrid>
   );
 };

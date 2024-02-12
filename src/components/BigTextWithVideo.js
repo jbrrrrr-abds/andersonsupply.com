@@ -31,7 +31,7 @@ const VideoMask = styled.svg`
   font-family: var(--secondary-font);
   text-transform: uppercase;
   font-size: ${rem(400)};
-  line-height: .93;
+  line-height: 0.93;
 
   .filler {
     visibility: hidden;

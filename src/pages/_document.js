@@ -4,8 +4,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { Helmet } from 'react-helmet';
 import { ServerStyleSheet } from 'styled-components';
 
-export default class extends Document {
-
+export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
@@ -13,7 +12,8 @@ export default class extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
+          enhanceApp: (App) => (props) =>
+            sheet.collectStyles(<App {...props} />),
         });
 
       const initialProps = await Document.getInitialProps(ctx);
@@ -46,32 +46,31 @@ export default class extends Document {
   // should render on <head>
   get helmetHeadComponents() {
     return Object.keys(this.props.helmet)
-      .filter(el => el !== 'htmlAttributes' && el !== 'bodyAttributes')
-      .map(el => this.props.helmet[el].toComponent());
+      .filter((el) => el !== "htmlAttributes" && el !== "bodyAttributes")
+      .map((el) => this.props.helmet[el].toComponent());
   }
 
   get helmetJsx() {
-    return (
-      <Helmet />
-    );
+    return <Helmet />;
   }
 
   render() {
     return (
       <Html {...this.helmetHtmlAttrComponents}>
-
         <Head>
           {this.helmetJsx}
           {this.helmetHeadComponents}
           <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+            rel="stylesheet"
+          />
         </Head>
 
         <body {...this.helmetBodyAttrComponents}>
           <Main />
           <NextScript />
         </body>
-
       </Html>
     );
   }

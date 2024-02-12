@@ -1,3 +1,7 @@
 {
-  "extends": "stylelint-config-standard-scss"
+  "extends": [
+
+  "stylelint-config-standard"
+  ],
+  "customSyntax": "postcss-styled-syntax"
 }
