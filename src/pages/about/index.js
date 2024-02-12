@@ -77,7 +77,7 @@ export async function getStaticProps({ preview = null }) {
 
   const client = Client();
 
-  const page = await client.getSingle('about') || {};
+  const page = (await client.getSingle('about')) || {};
 
   return {
     props: {

@@ -32,7 +32,7 @@ export async function getStaticProps({ preview = null }) {
 
   const client = Client();
 
-  const page = await client.getSingle('confirmed') || {};
+  const page = (await client.getSingle('confirmed')) || {};
 
   return {
     props: {

@@ -28,8 +28,13 @@ const InlineLink = ({
       {children}
     </a>
   ) : (
-    <Link href={formatInternal} prefetch={prefetch} legacybehavior>
-      <a {...rest}>{children}</a>
+    <Link
+      href={formatInternal}
+      prefetch={prefetch}
+      legacybehavior="true"
+      {...rest}
+    >
+      {children}
     </Link>
   );
 };

@@ -2,6 +2,7 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { Helmet } from 'react-helmet';
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
@@ -71,6 +72,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
+        <GoogleAnalytics gaId="G-0DZLS1C28M" />
       </Html>
     );
   }

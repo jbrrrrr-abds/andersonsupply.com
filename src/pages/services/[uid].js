@@ -82,8 +82,8 @@ const ServicesSingle = ({ page, marquee }) => {
 export async function getStaticProps({ params, preview = null, previewData = {} }) {
   const { ref } = previewData;
   const client = Client();
-  const page = await client.getByUID('services_single', params.uid, ref ? { ref } : null) || {};
-  const marquee = await client.getSingle('marquee') || {};
+  const page = (await client.getByUID('services_single', params.uid, ref ? { ref } : null)) || {};
+  const marquee = (await client.getSingle('marquee')) || {};
 
   return {
     props: {

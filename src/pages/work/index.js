@@ -85,7 +85,7 @@ export async function getStaticProps({ preview = null }) {
 
   const client = Client();
 
-  const page = await client.getSingle('work', { fetchLinks: fields }) || {};
+  const page = (await client.getSingle('work', { fetchLinks: fields })) || {};
 
   return {
     props: {
