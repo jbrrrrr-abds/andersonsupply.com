@@ -2,8 +2,10 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { Helmet } from 'react-helmet';
-import { GoogleAnalytics } from "@next/third-parties/google";
-import { ServerStyleSheet } from 'styled-components';
+import { ServerStyleSheet } from "styled-components";
+import Script from "next/script";
+
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_MEASUREMENT_ID;
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -66,13 +68,24 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
             rel="stylesheet"
           />
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){window.dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_MEASUREMENT_ID}');
+            `}
+          </Script>
         </Head>
 
         <body {...this.helmetBodyAttrComponents}>
           <Main />
           <NextScript />
         </body>
-        <GoogleAnalytics gaId="G-0DZLS1C28M" />
       </Html>
     );
   }
