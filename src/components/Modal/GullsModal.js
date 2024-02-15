@@ -1,11 +1,11 @@
-import create from 'zustand';
-import React from 'react';
-import Modal from 'react-modal';
-import styled from 'styled-components';
-import { position, size } from 'polished';
-import Container from './../Container';
+import { create } from "zustand";
+import React from "react";
+import Modal from "react-modal";
+import styled from "styled-components";
+import { position, size } from "polished";
+import Container from "./../Container";
 // import { hover } from '../../styles/helpers';
-import UnstyledButton from '../UnstyledButton';
+import UnstyledButton from "../UnstyledButton";
 
 /**
  * returns YouTube ID
@@ -17,7 +17,8 @@ export const getYouTubeID = (url) => {
     return null;
   }
 
-  const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+  const regExp =
+    /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
   const match = url.match(regExp);
 
   return match && match[7].length === 11 ? match[7] : false;
@@ -26,11 +27,10 @@ export const getYouTubeID = (url) => {
 /**
  * useModal hook
  */
-export const [useModal] = create(set => ({
+export const [useModal] = create((set) => ({
   modalOpen: false,
   modalData: null,
   toggleModal: (name = false, modalData = null) => {
-
     if (!name) {
       return set({
         modalOpen: false,
@@ -38,7 +38,7 @@ export const [useModal] = create(set => ({
       });
     }
 
-    return set(state => ({
+    return set((state) => ({
       modalOpen: state.modalOpen === name ? false : name,
       modalData,
     }));
@@ -47,12 +47,12 @@ export const [useModal] = create(set => ({
 
 const Close = styled(UnstyledButton)`
   ${size(44)}
-  ${position('fixed', 20, 20, null, null)}
+  ${position("fixed", 20, 20, null, null)}
   background-color: var(--gold);
   font-size: 1.5rem;
   line-height: 44px;
   border-radius: 50%;
-  transition: all .3s;
+  transition: all 0.3s;
 `;
 
 /**
@@ -60,7 +60,7 @@ const Close = styled(UnstyledButton)`
  */
 const GullsModal = ({
   className,
-  appElement = '#__next',
+  appElement = "#__next",
   children,
   ...props
 }) => {
@@ -87,9 +87,7 @@ const GullsModal = ({
       >
         &times;
       </Close>
-      <Container>
-        {children}
-      </Container>
+      <Container>{children}</Container>
     </Modal>
   );
 };

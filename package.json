@@ -59,7 +59,7 @@
     "superior-mq": "^1.0.1",
     "use-is-tabbing": "^0.1.1",
     "use-onclickoutside": "^0.3.2",
-    "zustand": "^3.4.2"
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
