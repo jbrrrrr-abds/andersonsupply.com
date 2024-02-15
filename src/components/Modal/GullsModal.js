@@ -27,7 +27,7 @@ export const getYouTubeID = (url) => {
 /**
  * useModal hook
  */
-export const [useModal] = create((set) => ({
+export const useModal = create((set) => ({
   modalOpen: false,
   modalData: null,
   toggleModal: (name = false, modalData = null) => {
