@@ -20,7 +20,7 @@
   "lint-staged": {
     "*.js": [
       "eslint --fix",
-      "stylelint --fix",
+      "stylelint",
       "git add"
     ]
   },

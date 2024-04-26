@@ -49,12 +49,16 @@ const FormWrapper = styled.section`
 
 const StyledForm = styled.form`
   --gap: 36px;
+
   position: relative;
   text-align: center;
 
-  ${screen.below(bp.desktop, `
+  ${screen.below(
+    bp.desktop,
+    `
     --gap: 16px;
-  `)}
+  `,
+  )}
 `;
 
 const Fieldset = styled.fieldset`
@@ -71,10 +75,13 @@ const Fieldset = styled.fieldset`
 const FieldsetWithBorder = styled(Fieldset)`
   padding-bottom: 55px;
 
-  ${screen.above(bp.mobile, `
+  ${screen.above(
+    bp.mobile,
+    `
     margin-bottom: 38px;
     border-bottom: 1px solid #cbcbcb;
-  `)}
+  `,
+  )}
 `;
 
 const ServicesSection = styled(Section)`
@@ -89,30 +96,45 @@ const InfoFieldset = styled(Fieldset)`
 const DesignGrid = styled(Grid)`
   grid-column-gap: var(--gap);
 
-  ${screen.above(bp.laptopSm, `
+  ${screen.above(
+    bp.laptopSm,
+    `
     grid-template-columns: repeat(3, 1fr);
-  `)}
+  `,
+  )}
 
-  ${screen.below(bp.laptopSm, `
+  ${screen.below(
+    bp.laptopSm,
+    `
     grid-row-gap: calc(var(--gap) * 2.5);
-  `)}
+  `,
+  )}
 `;
 
 const CategoryGrid = styled(Grid)`
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
 
-  ${screen.below(bp.laptop, `
+  ${screen.below(
+    bp.laptop,
+    `
     grid-template-columns: repeat(3, 1fr);
-  `)}
+  `,
+  )}
 
-  ${screen.below(bp.laptopSm, `
+  ${screen.below(
+    bp.laptopSm,
+    `
     grid-template-columns: repeat(2, 1fr);
-  `)}
+  `,
+  )}
 
-  ${screen.below(bp.mobile, `
+  ${screen.below(
+    bp.mobile,
+    `
     grid-template-columns: 1fr;
-  `)}
+  `,
+  )}
 `;
 
 const CategoryWrap = styled.div`
@@ -125,7 +147,12 @@ const CategoryWrap = styled.div`
     z-index: 1;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(28, 28, 30, 0) 70%, rgba(10, 10, 11, 0) 70%, #0a0a0b 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(28 28 30 0) 70%,
+      rgba(10 10 11 0) 70%,
+      #0a0a0b 100%
+    );
     content: "";
   }
 `;
@@ -249,13 +276,17 @@ const FaqLink = styled(InlineLink)`
 
 const RangeSection = styled(Section)`
   --bottom-spacing: 212px;
+
   position: relative;
   padding: var(--spacing) 0 var(--bottom-spacing);
   overflow: hidden;
 
-  ${screen.below(bp.mobile, `
+  ${screen.below(
+    bp.mobile,
+    `
     --bottom-spacing: 180px;
-  `)}
+  `,
+  )}
 `;
 
 const RangeContainer = styled.div`
@@ -271,9 +302,12 @@ const RangeFieldset = styled(Fieldset)`
   legend {
     margin-bottom: 150px;
 
-    ${screen.below(bp.desktopSm, `
+    ${screen.below(
+      bp.desktopSm,
+      `
       margin-bottom: 112px;
-    `)}
+    `,
+    )}
   }
 `;
 
@@ -281,9 +315,12 @@ const InformationSection = styled(Section)`
   padding: var(--spacing) 0 20px;
   overflow: hidden;
 
-  ${screen.below(bp.laptop, `
+  ${screen.below(
+    bp.laptop,
+    `
     padding-bottom: 42px;
-  `)}
+  `,
+  )}
 `;
 
 const KnobContainer = styled.div`
@@ -294,17 +331,22 @@ const KnobContainer = styled.div`
   margin-top: 90px;
   column-gap: 200px;
 
-  ${screen.below(bp.desktopSm, `
+  ${screen.below(
+    bp.desktopSm,
+    `
     column-gap: 125px;
-  `)}
+  `,
+  )}
 
-  ${screen.below(bp.laptopSm, `
+  ${screen.below(
+    bp.laptopSm,
+    `
     column-gap: 65px;
-  `)}
+  `,
+  )}
 `;
 
 const KnobWrapper = styled.div`
-
   &:first-child {
     /* not sure why */
     margin-left: 8px;
@@ -315,17 +357,26 @@ const RangeGrid = styled(Grid)`
   grid-template-columns: repeat(2, 80px);
   grid-gap: 280px;
 
-  ${screen.below(bp.desktopSm, `
+  ${screen.below(
+    bp.desktopSm,
+    `
     grid-gap: 210px;
-  `)}
+  `,
+  )}
 
-  ${screen.below(bp.laptopSm, `
+  ${screen.below(
+    bp.laptopSm,
+    `
     grid-gap: 140px;
-  `)}
+  `,
+  )}
 
-  ${screen.below(bp.mobile, `
+  ${screen.below(
+    bp.mobile,
+    `
     grid-gap: 50px;
-  `)}
+  `,
+  )}
 `;
 
 const RangeColumn = styled.div`
@@ -348,11 +399,14 @@ const RangeLabel = styled.div`
 
   /* stylelint-disable */
   span {
-    ${screen.below(bp.mobile, `
+    ${screen.below(
+      bp.mobile,
+      `
       display: block;
       margin: auto;
       font-size: ${rem(12)};
-    `)}
+    `,
+    )}
   }
 `;
 
@@ -384,7 +438,12 @@ const RangeInput = styled.input`
 
   &::-webkit-slider-runnable-track {
     height: 3px;
-    background: linear-gradient(to right, #b48645 var(--chromium-gradient), #d9d5c1 var(--chromium-gradient), #d9d5c1);
+    background: linear-gradient(
+      to right,
+      #b48645 var(--chromium-gradient),
+      #d9d5c1 var(--chromium-gradient),
+      #d9d5c1
+    );
   }
 
   &::-moz-range-track {
@@ -397,9 +456,12 @@ const RangeInput = styled.input`
     height: 26px;
     border-radius: 3px;
     background: #fff;
-    box-shadow: inset -21.5px -1px 0 1.5px #282829,
-      inset 21.5px 1px 0 1.5px #282829, inset 21.5px -1px 0 1.5px #282829,
-      inset -21.5px 1px 0 1.5px #282829, 0 4px 20px rgba(0, 0, 0, .27);
+    box-shadow:
+      inset -21.5px -1px 0 1.5px #282829,
+      inset 21.5px 1px 0 1.5px #282829,
+      inset 21.5px -1px 0 1.5px #282829,
+      inset -21.5px 1px 0 1.5px #282829,
+      0 4px 20px rgba(0, 0, 0, 0.27);
     border: none;
     margin-top: -11px;
   }
@@ -409,9 +471,12 @@ const RangeInput = styled.input`
     height: 26px;
     border-radius: 3px;
     background: #fff;
-    box-shadow: inset -21.5px -1px 0 1.5px #282829,
-      inset 21.5px 1px 0 1.5px #282829, inset 21.5px -1px 0 1.5px #282829,
-      inset -21.5px 1px 0 1.5px #282829, 0 4px 20px rgba(0, 0, 0, .27);
+    box-shadow:
+      inset -21.5px -1px 0 1.5px #282829,
+      inset 21.5px 1px 0 1.5px #282829,
+      inset 21.5px -1px 0 1.5px #282829,
+      inset -21.5px 1px 0 1.5px #282829,
+      0 4px 20px rgba(0, 0, 0, 0.27);
     border: none;
   }
 
@@ -433,9 +498,12 @@ const RangeMessageWrap = styled.div`
   margin: auto;
   background-color: var(--white);
 
-  ${screen.below(bp.mobile, `
+  ${screen.below(
+    bp.mobile,
+    `
     max-width: var(--container-width);
-  `)}
+  `,
+  )}
 `;
 
 const RangeMessage = styled.div`
@@ -444,8 +512,6 @@ const RangeMessage = styled.div`
   align-items: center;
   justify-content: center;
   text-align: left;
-
-
 
   .range-icon {
     display: inline-block;
@@ -460,36 +526,48 @@ const RangeMessage = styled.div`
     margin-bottom: 0;
   }
 
-  ${screen.below(bp.mobile, `
+  ${screen.below(
+    bp.mobile,
+    `
     text-align: center;
     display: block;
 
     .range-icon {
       margin-right: 0px;
     }
-  `)}
-
+  `,
+  )}
 `;
 
 const RangeSpeaker = styled.div`
   --speaker-position: 0;
+
   position: absolute;
   bottom: calc((var(--bottom-spacing) * -1) - 30px);
-  ${props => props.alignedLeft ? 'left: var(--speaker-position)' : 'right: var(--speaker-position)'};
+  ${(props) =>
+    props.alignedLeft
+      ? "left: var(--speaker-position)"
+      : "right: var(--speaker-position)"};
   z-index: 1;
   width: 117px;
   height: 385px;
   pointer-events: none;
 
-  ${screen.below(bp.laptopSm, `
+  ${screen.below(
+    bp.laptopSm,
+    `
     --speaker-position: calc(var(--container-gutter) + 150px);
-  `)}
+  `,
+  )}
 
-  ${screen.below(bp.mobile, `
+  ${screen.below(
+    bp.mobile,
+    `
     width: 85px;
     height: 280px;
     --speaker-position: calc(var(--container-gutter) + 215px);
-  `)}
+  `,
+  )}
 `;
 
 const RangeValue = styled.span`
@@ -503,6 +581,7 @@ const RangeValue = styled.span`
 const RangeJumboValue = styled.div`
   --left: -308px;
   --right: -352px;
+
   position: absolute;
   top: 50%;
   ${props => props.alignedLeft ? 'left: var(--left)' : 'right: var(--right)'};
