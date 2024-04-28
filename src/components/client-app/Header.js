@@ -8,7 +8,7 @@ import Logo from "../Logo";
 import InlineLink from "../InlineLink";
 
 const StyledHeader = styled.header`
-  --item-color: var(--brand-dark);
+  --item-color: var(--brand-white);
 
   position: fixed;
   z-index: 9;
@@ -17,7 +17,7 @@ const StyledHeader = styled.header`
   color: var(--item-color);
   top: 0;
   transform: none;
-  background-color: transparent;
+  background-color: var(--brand-black);
   transition:
     0.2s background-color ease-in-out 0s,
     0.5s transform ease-in-out,
@@ -37,7 +37,7 @@ const LogoLink = styled(InlineLink)`
   transition:
     0.5s width ease-in-out,
     0.2s color;
-  width: 160px;
+  width: 120px;
   display: grid;
   place-items: center;
 

@@ -92,6 +92,10 @@ const GlobalStyle = createGlobalStyle`
   *::before,
   *::after { box-sizing: border-box; }
 
+  html, body {
+    height: 100%;
+  }
+
   body {
     margin: 0;
     font-family: var(--primary-font);
@@ -99,6 +103,12 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     line-height: 1.75;
     color: var(--brand-black);
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex-grow: 1;
   }
 
   h1,

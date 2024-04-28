@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main>
+    <section>
       <div>
         <p>
           Get started by editing&nbsp;
@@ -83,6 +83,6 @@ export default function Home() {
           </p>
         </a>
       </div>
-    </main>
+    </section>
   );
 }
