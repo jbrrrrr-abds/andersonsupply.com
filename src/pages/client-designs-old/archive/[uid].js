@@ -3,9 +3,10 @@ import { Helmet } from "react-helmet";
 import { Client } from "util/prismicHelpers";
 import Prismic from "@prismicio/client";
 
+import ClientDesignAuth from "../../../components/ClientDesignAuth/";
+
 const ClientDesignArchiveTemplate = ({ page }) => {
   if (!page) return null;
-
   const { data } = page;
   const uid = page.uid;
 
@@ -21,7 +22,7 @@ const ClientDesignArchiveTemplate = ({ page }) => {
         ]}
       />
       <main>
-        <div style={{ height: "500px" }}></div>
+        <ClientDesignAuth />
       </main>
     </>
   );
