@@ -1,18 +1,29 @@
 "use client";
-
-import React from "react";
+import "./styles/globals.css";
+import React, { useState } from "react";
 import { Metadata } from "next";
 import GlobalStyle from "../styles/global-styles";
-import Header from "../../components/client-app/Header";
-import Footer from "../../components/client-app/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import ClientDesignsAuth, {
+  clientAuthStore,
+} from "./components/ClientDesignsAuth";
+import NoEntry from "./components/NoEntry";
 
 const RootLayout = ({ children }) => {
+  const [isAuth, setAuth] = useState(false);
+  const updateAuth = (val) => {
+    setAuth(val);
+  };
+
   return (
     <>
       <html lang="en">
         <body>
           <Header />
-          <main>{children}</main>
+          <main>
+            {isAuth ? { children } : <NoEntry {...{ updateAuth, isAuth }} />}
+          </main>
           <Footer />
           <GlobalStyle />
         </body>
