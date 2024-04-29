@@ -2,73 +2,52 @@ import React from "react";
 import { Client } from "util/prismicHelpers";
 import Prismic from "@prismicio/client";
 
-export async function generateStaticParams() {
-  const slug = [{ slug: "sierra-nevada-designs" }];
-  return slug;
+async function getPrismicPage() {
+  const client = Client();
+  return client.getByUID("client_design_archive_page", "sierra-nevada-designs");
 }
-export default function Page({ params }) {
-  return <h1>wee!</h1>;
-}
-/*const ClientDesignArchiveTemplate = ({ page }) => {
-  if (!page) return null;
-  const { data } = page;
-  const uid = page.uid;
-
-  console.log(page);
+export default async function ClientDesignArchiveTemplate() {
+  const prismicData = await getPrismicPage();
+  if (!prismicData) return null;
+  const { data } = prismicData;
 
   return (
     <>
-      <Helmet
-        title={data.page_title}
-        meta={[
-          { name: "google", content: "notranslate" },
-          { name: "robots", content: "noindex, nofollow" },
-        ]}
-      />
       <main>
-        <ClientDesignAuth />
+        <h1 className="text-xl">prismic page</h1>
+        <section className="grid grid-cols-4 gap-4">
+          {data.design_unit.map((unit, i) => (
+            <div key={i} className="p-2 m-2">
+              <img
+                className="m-w-full"
+                src={unit.design_artwork.url}
+                alt={unit.design_name.text}
+              />
+              <h2 className="mt-4 text-center">{unit.design_name[0].text}</h2>
+            </div>
+          ))}
+        </section>
       </main>
     </>
   );
-};
-
-export async function getStaticProps({
-  params,
-  preview = null,
-  previewData = {},
-}) {
-  const { ref } = previewData;
-  const client = Client();
-  const page =
-    (await client.getByUID(
-      "client_design_archive_page",
-      params.uid,
-      ref ? { ref } : null,
-    )) || {};
-
-  return {
-    props: {
-      preview,
-      page,
-    },
-  };
 }
-
-export async function getStaticPaths() {
+const getStaticPaths = async () => {
   const pages = await Client().query(
     Prismic.Predicates.at("document.type", "client_design_archive_page"),
   );
-  const paths = pages?.results?.map((page) => ({ params: { uid: page.uid } }));
+  const paths = pages?.results?.map((page) => ({ slug: page.uid }));
 
   return {
     paths,
-    fallback: false,
   };
-}
+};
 
-export async function getServerSideProps() {
-  //
-}
+export async function generateStaticParams() {
+  const pages = await Client().query(
+    Prismic.Predicates.at("document.type", "client_design_archive_page"),
+  );
+  const paths = pages?.results?.map((page) => ({ slug: page.uid }));
+  //console.log(paths);
 
-export default ClientDesignArchiveTemplate;
-*/
+  return paths;
+}
