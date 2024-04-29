@@ -8,10 +8,9 @@ const NoEntry = ({ updateAuth, isAuth }) => {
   });
 
   return (
-    <section>
-      <ClientDesignsAuth {...{ isAuth }} />
-      <h1>You are not logged in.</h1>
-    </section>
+    <main>
+      <ClientDesignsAuth {...{ isAuth, updateAuth }} />
+    </main>
   );
 };
 

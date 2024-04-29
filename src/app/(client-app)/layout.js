@@ -24,8 +24,8 @@ const RootLayout = ({ children }) => {
           className={`${Anton.variable} ${GothamSS.variable} min-h-screen flex flex-col`}
         >
           <Header />
-          <div className="container grow">
-            {isAuth ? { children } : <NoEntry {...{ updateAuth, isAuth }} />}
+          <div className="container mx-auto grow">
+            {isAuth ? children : <NoEntry {...{ updateAuth, isAuth }} />}
           </div>
           <Footer />
         </body>

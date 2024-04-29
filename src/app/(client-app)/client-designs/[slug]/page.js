@@ -1,11 +1,12 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Client } from "util/prismicHelpers";
 import Prismic from "@prismicio/client";
 
-import ClientDesignAuth from "../../../components/ClientDesignAuth/";
-
-export default function Page() {
+export async function generateStaticParams() {
+  const slug = [{ slug: "sierra-nevada-designs" }];
+  return slug;
+}
+export default function Page({ params }) {
   return <h1>wee!</h1>;
 }
 /*const ClientDesignArchiveTemplate = ({ page }) => {

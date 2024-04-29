@@ -25,7 +25,7 @@ const GothamSS = localFont({
     },
     {
       path: "../../../../public/fonts/GothamSSm-Black.woff2",
-      weight: "900",
+      weight: "9000",
     },
   ],
   variable: "--font-GothamSS",

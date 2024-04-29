@@ -1,13 +1,10 @@
 /** Only loading TW into the client-app routes, not the page router, or the (_main) route group **/
+const colors = require("tailwindcss/colors");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: [
-    "./src/app/(client-app)/components/**/*.{js,jsx}",
-    "./src/app/(client-app)/**/*.{js,jsx}",
-    "./src/app/(client-app)/*.{js,jsx}",
-  ],
+  content: ["src/app/(client-app)/**/*.{js,jsx}"],
   prefix: "",
   theme: {
     container: {
