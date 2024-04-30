@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { create, set } from "zustand";
-import ClientDesignsAuth from "./ClientDesignsAuth";
+import ClientAuth from "./ClientAuth";
 
 const NoEntry = ({ updateAuth, isAuth }) => {
   useEffect(() => {
@@ -9,7 +9,7 @@ const NoEntry = ({ updateAuth, isAuth }) => {
 
   return (
     <main>
-      <ClientDesignsAuth {...{ isAuth, updateAuth }} />
+      <ClientAuth {...{ isAuth, updateAuth }} />
     </main>
   );
 };

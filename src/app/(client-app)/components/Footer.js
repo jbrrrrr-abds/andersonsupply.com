@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = ({}) => {
   return (
-    <footer className="w-full text-white bg-slate-600">
+    <footer className="w-full text-white bg-brandBlack">
       <div className="container py-4 mx-auto">
         <Link className="text-sm" href="/">
           Anderson Bros. Design &amp; Supply

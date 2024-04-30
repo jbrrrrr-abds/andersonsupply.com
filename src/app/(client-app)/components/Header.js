@@ -4,12 +4,13 @@ import Logo from "../../../components/Logo";
 
 const Header = ({}) => {
   return (
-    <header className="w-full">
-      <div className="container py-2">
-        <div className="logo max-w-28">
-          <Link href="/" aria-label="Anderson Brothers">
-            <Logo className="w-full" />
-          </Link>
+    <header className="w-full bg-brandBlack">
+      <div className="container flex flex-row w-full py-6">
+        <div className="pr-8 logo max-w-32">
+          <Logo className="w-full text-white" />
+        </div>
+        <div className="flex items-end self-center justify-end grow">
+          <span className="text-xs text-white lowercase cursor-pointer hover:underline">Log Out</span>
         </div>
       </div>
     </header>

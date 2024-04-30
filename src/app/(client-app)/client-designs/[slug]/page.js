@@ -14,16 +14,21 @@ export default async function ClientDesignArchiveTemplate({ params }) {
   return (
     <>
       <main>
-        <h2 className="mb-4 text-4xl">{data.client_name}</h2>
-        <section className="grid grid-cols-8 gap-2">
+        <h2 className="mb-12 text-4xl">{data.client_name} Designs</h2>
+        <section className="grid grid-cols-5 gap-6">
           {data.design_unit.map((unit, i) => (
-            <div key={i} className="p-2 m-2">
-              <img
-                className="m-w-full"
-                src={unit.design_artwork.url}
-                alt={unit.design_name.text}
-              />
-              <h3 className="mt-2 text-xs font-bold leading-4 text-center">
+            <div key={i}>
+              <div>
+                <img
+                  className="m-w-full"
+                  src={unit.design_artwork.url}
+                  alt={unit.design_name.text}
+                />
+                <div>
+                  <input type="checkbox" className="hidden"></input>
+                </div>
+              </div>
+              <h3 className="mt-1 text-xs font-bold leading-4 text-center">
                 {unit.design_name[0].text}
               </h3>
             </div>

@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 import supabase from "../lib/supabaseHelpers.js";
 import { useRouter } from "next/navigation";
 
-const ClientDesignsAuth = ({ page, updateAuth, isAuth }) => {
+const ClientAuth = ({ page, updateAuth, isAuth }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
@@ -42,7 +42,7 @@ const ClientDesignsAuth = ({ page, updateAuth, isAuth }) => {
       <h1 className="text-center max-w-[800px] mx-auto text-2xl mb-4">
         Please log in to view your design archive
       </h1>
-      <section className="flex flex-col self-center p-6 border rounded-md border-input md:w-1/3 sm:w-full">
+      <section className="flex flex-col self-center p-6 bg-white border rounded-md border-brandBlack md:w-1/3 sm:w-full">
         <form onSubmit={loginSubmit}>
           <div>
             <label className="text-xs font-bold">Email:</label>
@@ -65,7 +65,7 @@ const ClientDesignsAuth = ({ page, updateAuth, isAuth }) => {
             />
           </div>
           <div className="flex justify-end mt-3">
-            <Button type="submit">Log In</Button>
+            <Button className="transition-colors duration-200 ease-in-out bg-brandBlack hover:bg-gold" type="submit">Log In</Button>
           </div>
         </form>
       </section>
@@ -73,4 +73,4 @@ const ClientDesignsAuth = ({ page, updateAuth, isAuth }) => {
   );
 };
 
-export default ClientDesignsAuth;
+export default ClientAuth;

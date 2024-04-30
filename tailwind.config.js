@@ -13,13 +13,6 @@ module.exports = {
       screens: {
         "2xl": "1400px",
       },
-      colors: {
-        transparent: "transparent",
-        brandBlack: "#282829",
-        brandWhite: "#f0eee3",
-        gold: "#b48645",
-        lightGray: "#646464",
-      },
       fontFamily: {
         sans: ["var(--font-GothamSS)"],
       },
@@ -31,6 +24,12 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        brandBlack: "#282829",
+        brandWhite: "#f0eee3",
+        gold: "#b48645",
+        lightGray: "#646464",
+        goldUI: "hsl(var(--goldUI))",
+        "goldUI-foreground": "hsl(var(--warning-foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
