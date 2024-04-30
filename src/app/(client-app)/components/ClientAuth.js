@@ -2,8 +2,10 @@
 import { useState } from "react";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import supabase from "../lib/supabaseHelpers.js";
+import createSBClient from "clientapp/lib/supabase/client";
 import { useRouter } from "next/navigation";
+
+const supabase = createSBClient;
 
 const ClientAuth = ({ page, updateAuth, isAuth }) => {
   const [email, setEmail] = useState("");

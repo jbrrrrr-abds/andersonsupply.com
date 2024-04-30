@@ -1,6 +1,7 @@
 "use client";
 import "./styles/globals.css";
 import React, { useState } from "react";
+import AuthProvider from './components/AuthProvider';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import NoEntry from "./components/NoEntry";

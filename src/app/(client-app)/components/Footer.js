@@ -1,4 +1,4 @@
-import Container from "../../../components/Container";
+import Container from "root/components/Container";
 import Link from "next/link";
 
 const Footer = ({}) => {
