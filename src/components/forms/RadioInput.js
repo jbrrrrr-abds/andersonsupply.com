@@ -107,4 +107,6 @@ const RadioInput = React.forwardRef(({
   </RadioWrap>
 ));
 
+RadioInput.displayName = "RadioInput";
+
 export default RadioInput;

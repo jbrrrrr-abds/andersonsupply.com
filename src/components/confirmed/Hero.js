@@ -8,8 +8,10 @@ import Container from 'components/Container';
 import { OneThirty } from 'components/Jumbo';
 import Button from 'components/Button';
 import AbsoluteImage from 'components/AbsoluteImage';
+import Image from 'next-export-optimize-images/image';
 import TextBlock from 'components/TextBlock';
 import InlineLink from 'components/InlineLink';
+
 
 const StyledSection = styled(Section)`
   position: relative;

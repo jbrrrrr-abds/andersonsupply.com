@@ -175,6 +175,8 @@ const CheckInput = React.forwardRef(
   ),
 );
 
+CheckInput.displayName = "CheckInput";
+
 CheckInput.propTypes = {
   name: PropTypes.string,
   checked: PropTypes.bool,

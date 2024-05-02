@@ -1,17 +1,8 @@
-import { useEffect, useState } from "react";
-import { create, set } from "zustand";
-import ClientAuth from "./ClientAuth";
+//import ClientAuth from "./ClientAuth";
 
-const NoEntry = ({ updateAuth, isAuth }) => {
-  useEffect(() => {
-    //updateAuth(true);
-  });
+const NoEntry = async () => {
 
-  return (
-    <main>
-      <ClientAuth {...{ isAuth, updateAuth }} />
-    </main>
-  );
-};
+
+}
 
 export default NoEntry;

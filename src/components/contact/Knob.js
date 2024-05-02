@@ -2,9 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import screen from 'superior-mq';
 import { bp } from '../../styles/helpers';
+import Image from 'next-export-optimize-images/image';
 
 const KnobWrapper = styled.div`
   --indicator-size: 164px;
+
   position: relative;
   width: var(--indicator-size);
 
@@ -21,6 +23,7 @@ const Indicators = styled.svg`
 
 const TheKnob = styled.div`
   --knob-size: 117px;
+
   width: var(--knob-size);
   height: var(--knob-size);
   border-radius: 100%;
@@ -29,22 +32,30 @@ const TheKnob = styled.div`
   left: 0;
   right: 0;
   margin: 0 auto;
-
-  box-shadow: 3px 6px 1px rgba(0, 0, 0, .1);
+  box-shadow: 3px 6px 1px rgba(0 0 0 10%);
 
   ${screen.below(bp.mobile, `
     --knob-size: 88px;
   `)}
 `;
 
-const Img = styled.img`
+/*const Img = styled.img`
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   pointer-events: none;
-`;
+`;*/
+
+const Img = styled.Image`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+`
 
 const Tuner = styled.div`
   position: absolute;

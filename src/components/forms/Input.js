@@ -189,6 +189,8 @@ const Input = React.forwardRef(
   },
 );
 
+Input.displayName = "Input";
+
 Input.propTypes = {
   label: PropTypes.string,
   type: PropTypes.string.isRequired,

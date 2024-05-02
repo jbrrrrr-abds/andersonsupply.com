@@ -1,14 +1,17 @@
 "use client";
 import { useState } from "react";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
-//import Client from "clientapp/lib/supabase/Client";
+import { Input } from "clientapp/components/ui/input";
+import { Button } from "clientapp/components/ui/button";
+import SupabaseClient from "clientapp/lib/supabase/client";
 import { useRouter } from "next/navigation";
-import { login } from 'clientapp/login/actions';
+import { login } from './actions';
 
+const userToken = localStorage;
+const supabase = SupabaseClient;
+const ClientAuth = ({ page }) => {
 
-//const supabase = Client;
-const ClientAuth = ({ page, updateAuth, isAuth }) => {
+  checkUser();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
@@ -23,21 +26,18 @@ const ClientAuth = ({ page, updateAuth, isAuth }) => {
   const loginSubmit = async (event) => {
     event.preventDefault();
     // sends a signIn request to supabase, authenticating the user
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await SupabaseClient.auth.signInWithPassword({
       email: email,
       password: password,
     });
-
-    updateAuth(true);
 
     data.account = await supabase
       .from("users")
       .select("prismicSlug")
       .eq("email", data.user.email);
 
-    console.log(data.account.data[0].prismicSlug);
     const pageSlug = data.account.data[0].prismicSlug;
-    router.push(`/client-designs/${pageSlug}/`);
+    router.push(`/client/designs/${pageSlug}/`);
   };
 
   return (
@@ -81,3 +81,8 @@ const ClientAuth = ({ page, updateAuth, isAuth }) => {
 };
 
 export default ClientAuth;
+
+const checkUser = () => {
+  if (!localStorage) return;
+  console.log(userToken);
+}

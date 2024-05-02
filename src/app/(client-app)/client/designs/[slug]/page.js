@@ -1,11 +1,13 @@
 import React from "react";
+import Image from 'next-export-optimize-images/image'
 import { Client } from "util/prismicHelpers";
 import Prismic from "@prismicio/client";
 
-async function getPrismicPage({ params }) {
+const getPrismicPage = ({ params }) => {
   const client = Client();
   return client.getByUID("client_design_archive_page", params.slug);
 }
+
 export default async function ClientDesignArchiveTemplate({ params }) {
   const prismicData = await getPrismicPage({ params });
   if (!prismicData) return null;
@@ -34,10 +36,12 @@ export default async function ClientDesignArchiveTemplate({ params }) {
             </div>
           ))}
         </section>
-      </main>
+        </main>
     </>
   );
 }
+
+/*
 const getStaticPaths = async () => {
   const pages = await Client().query(
     Prismic.Predicates.at("document.type", "client_design_archive_page"),
@@ -48,6 +52,9 @@ const getStaticPaths = async () => {
     paths,
   };
 };
+*/
+
+
 
 export async function generateStaticParams() {
   const pages = await Client().query(
@@ -56,3 +63,4 @@ export async function generateStaticParams() {
   const paths = pages?.results?.map((page) => ({ slug: page.uid }));
   return paths;
 }
+
