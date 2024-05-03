@@ -1,7 +1,4 @@
-const withExportImages = require('next-export-optimize-images')
-
-module.exports = withExportImages({
-  output: "export",
+module.exports = {
   compiler: {
     styledComponents: true,
   },
@@ -9,4 +6,4 @@ module.exports = withExportImages({
     SITE_URL: process.env.SITE_URL,
     NO_INDEX: process.env.NO_INDEX,
   },
-});
+};
