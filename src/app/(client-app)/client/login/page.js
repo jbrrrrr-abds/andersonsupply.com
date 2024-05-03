@@ -6,12 +6,9 @@ import SupabaseClient from "clientapp/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import { login } from './actions';
 
-const userToken = localStorage;
+
 const supabase = SupabaseClient;
 const ClientAuth = ({ page }) => {
-
-  checkUser();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
@@ -36,6 +33,7 @@ const ClientAuth = ({ page }) => {
       .select("prismicSlug")
       .eq("email", data.user.email);
 
+    console.log(data.account.data[0].prismicSlug);
     const pageSlug = data.account.data[0].prismicSlug;
     router.push(`/client/designs/${pageSlug}/`);
   };
@@ -81,8 +79,3 @@ const ClientAuth = ({ page }) => {
 };
 
 export default ClientAuth;
-
-const checkUser = () => {
-  if (!localStorage) return;
-  console.log(userToken);
-}

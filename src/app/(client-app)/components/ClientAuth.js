@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-//import Client from "clientapp/lib/supabase/Client";
+import SupabaseClient from "clientapp/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import { login } from 'clientapp/login/actions';
 
@@ -27,6 +27,8 @@ const ClientAuth = ({ page, updateAuth, isAuth }) => {
       email: email,
       password: password,
     });
+
+    console.log(SupabaseClient);
 
     updateAuth(true);
 

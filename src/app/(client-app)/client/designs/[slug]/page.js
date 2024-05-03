@@ -16,8 +16,9 @@ export default async function ClientDesignArchiveTemplate({ params }) {
   return (
     <>
       <main>
+      {/*<CheckUser access={data.clientAccess}/>*/}
         <h2 className="mb-12 text-4xl">{data.client_name} Designs</h2>
-        <section className="grid grid-cols-5 gap-6">
+        <section className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5">
           {data.design_unit.map((unit, i) => (
             <div key={i}>
               <div>
@@ -40,21 +41,6 @@ export default async function ClientDesignArchiveTemplate({ params }) {
     </>
   );
 }
-
-/*
-const getStaticPaths = async () => {
-  const pages = await Client().query(
-    Prismic.Predicates.at("document.type", "client_design_archive_page"),
-  );
-  const paths = pages?.results?.map((page) => ({ slug: page.uid }));
-
-  return {
-    paths,
-  };
-};
-*/
-
-
 
 export async function generateStaticParams() {
   const pages = await Client().query(

@@ -10,7 +10,6 @@ const Header = ({}) => {
           <Logo className="w-full text-white" />
         </div>
         <div className="flex items-end self-center justify-end grow">
-          <span className="text-xs text-white lowercase cursor-pointer hover:underline">Log Out</span>
         </div>
       </div>
     </header>
