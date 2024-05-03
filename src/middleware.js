@@ -1,4 +1,4 @@
-import { updateSession } from '@/utils/supabase/middleware'
+import { updateSession } from 'authtest/utils/supabase/middleware'
 
 export async function middleware(request) {
   console.log('auth test middleware');

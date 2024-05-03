@@ -5,7 +5,8 @@
     "paths": {
       "root/*": ["./*"],
       "app/*": ["/app/*"],
-      "clientapp/*": ["/app/(client-app)/*"]
+      "clientapp/*": ["/app/(client-app)/*"],
+      "authtest/*": ["/app/(auth-test)/*"]
     },
   },
   "exclude": [
