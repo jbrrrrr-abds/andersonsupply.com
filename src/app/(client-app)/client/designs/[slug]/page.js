@@ -1,5 +1,4 @@
 import React from "react";
-import Image from 'next-export-optimize-images/image'
 import { Client } from "util/prismicHelpers";
 import Prismic from "@prismicio/client";
 
@@ -16,7 +15,6 @@ export default async function ClientDesignArchiveTemplate({ params }) {
   return (
     <>
       <main>
-      {/*<CheckUser access={data.clientAccess}/>*/}
         <h2 className="mb-12 text-4xl">{data.client_name} Designs</h2>
         <section className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5">
           {data.design_unit.map((unit, i) => (
