@@ -1,10 +1,9 @@
 "use client";
 import "clientapp/styles/globals.css";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Anton, GothamSS } from "./styles/fonts";
-import { redirect } from 'next/navigation'
 
 const RootLayout = ({ children }) => {
   return (
