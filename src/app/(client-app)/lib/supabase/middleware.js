@@ -1,7 +1,6 @@
 import { createServerClient } from '@supabase/ssr'
-import { NextResponse } from 'next/server'
+import { NextResponse } from 'next/server';
 import { redirect } from 'next/navigation';
-
 
 export async function updateSession(request) {
   let response = NextResponse.next({
@@ -55,27 +54,24 @@ export async function updateSession(request) {
       },
     }
   )
+  const user = await supabase.auth.getUser()
 
+  if (user.data.user) {
+    const {data} = await supabase.from('users').select('prismicSlug').eq('email', user.data.user.email);
+    if (data[0].prismicSlug) {
+      response.headers.set('designArchive', data[0].prismicSlug);
+      return response
 
-  console.log(request.url);
+    } else {
+      return NextResponse.redirect(new URL('/client/unauthorized/', request.url));
 
-  console.log(request.url.includes(pageAccess))
-  (request.nextUrl.clone);
+    }
 
-  if (!request.url.includes(pageAccess)) {
 
   } else {
-    NextResponse.redirect(request.url);
+    return NextResponse.redirect(new URL('login/', request.url));
   }
-  const user = await supabase.auth.getUser()
-  if (user) {
-    const {data} = await supabase.from('users').select('prismicSlug').eq('email', user.data.user.email);
-    const pageAccess = console.log(data[0].prismicSlug);
-    return response
-  }
+
+
   // matcher should get all routes that include /designs/, which would include all protected data displayed.  any of those routes should kick back to login if not authed or provisioned
-
-
-
-
 }
