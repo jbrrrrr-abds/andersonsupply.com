@@ -1,19 +1,18 @@
-"use client";
-import { useState } from "react";
+//import { useState } from "react";
 import { Input } from "clientapp/components/ui/input";
 import { Button } from "clientapp/components/ui/button";
 import { login } from './actions';
 
 const ClientAuth = ({ page }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  //const [email, setEmail] = useState("");
+  //const [password, setPassword] = useState("");
 
   const handleEmailChange = (event) => {
-    setEmail(event.target.value);
+    //setEmail(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
+    //setPassword(event.target.value);
   };
 
   return (
@@ -29,8 +28,8 @@ const ClientAuth = ({ page }) => {
               type="email"
               name="email"
               className="border-brandBlack-300"
-              value={email}
-              onChange={handleEmailChange}
+              //value={email}
+              //onChange={handleEmailChange}
               required
               autoComplete="username"
             />
@@ -41,14 +40,14 @@ const ClientAuth = ({ page }) => {
               type="password"
               name="password"
               className="border-brandBlack-300"
-              value={password}
-              onChange={handlePasswordChange}
+              //value={password}
+              //onChange={handlePasswordChange}
               autoComplete="current-password"
               required
             />
           </div>
           <div className="flex justify-end mt-3">
-            <Button className="transition-colors duration-200 ease-in-out bg-brandBlack hover:bg-gold" type="submit" formAction={login}>Log In</Button>
+            <Button className="transition-colors duration-200 ease-in-out bg-brandBlack hover:bg-gold" type="submit" /*formAction={login}*/>Log In</Button>
           </div>
         </form>
       </section>
