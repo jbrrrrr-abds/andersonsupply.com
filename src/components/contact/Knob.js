@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import screen from 'superior-mq';
 import { bp } from '../../styles/helpers';
-import Image from 'next-export-optimize-images/image';
 
 const KnobWrapper = styled.div`
   --indicator-size: 164px;
@@ -39,23 +38,14 @@ const TheKnob = styled.div`
   `)}
 `;
 
-/*const Img = styled.img`
+const Img = styled.img`
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   pointer-events: none;
-`;*/
-
-const Img = styled.Image`
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  pointer-events: none;
-`
+`;
 
 const Tuner = styled.div`
   position: absolute;

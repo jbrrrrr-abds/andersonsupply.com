@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider next build && next-export-optimize-images",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
     "export": "NODE_OPTIONS=--openssl-legacy-provider yarn build && next export",
     "postexport": "node scripts/getSitemap.js",
     "start": "next start",
