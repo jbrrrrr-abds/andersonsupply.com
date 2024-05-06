@@ -12,8 +12,7 @@
     "lint:css": "stylelint './src/**/*.js'",
     "lint-staged": "lint-staged",
     "prettier": "prettier ./src/**/*",
-    "test": "jest",
-    "preinstall": "npx npm-force-resolutions"
+    "test": "jest"
   },
   "pre-commit": [
     "lint-staged"
