@@ -12,7 +12,8 @@
     "lint:css": "stylelint './src/**/*.js'",
     "lint-staged": "lint-staged",
     "prettier": "prettier ./src/**/*",
-    "test": "jest"
+    "test": "jest",
+    "preinstall": "npx npm-force-resolutions"
   },
   "pre-commit": [
     "lint-staged"
@@ -111,6 +112,11 @@
     "node": ">=10.15"
   },
   "overrides": {
-    "whatwg-url": "13.0.0"
+    "whatwg-url": "13.0.0",
+    "chokidar": "3.5.3",
+    "glob-parent": "6.0.2"
+  },
+  "resolutions": {
+    "eslint-plugin-react-hooks": "4.6.0"
   }
 }
