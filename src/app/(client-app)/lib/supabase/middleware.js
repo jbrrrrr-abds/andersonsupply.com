@@ -1,5 +1,5 @@
 import { createServerClient } from '@supabase/ssr'
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import { redirect } from 'next/navigation';
 
 export async function updateSession(request) {
@@ -69,7 +69,4 @@ export async function updateSession(request) {
   } else {
     return NextResponse.redirect(new URL('login/', request.url));
   }
-
-
-  // matcher should get all routes that include /designs/, which would include all protected data displayed.  any of those routes should kick back to login if not authed or provisioned
 }

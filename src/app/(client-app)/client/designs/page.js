@@ -5,17 +5,16 @@ import { headers } from 'next/headers';
 
 const getPrismicPage = () => {
   const client = Client();
-  /*
   const headersList = headers();
   const designArchive = headersList.get('designArchive');
 
   if (!designArchive) {
     return null;
   }
+  console.log('design page');
   console.log(client);
   console.log(designArchive);
-  */
-  return client.getByUID("client_design_archive_page", 'sierra-nevada-designs');
+  return client.getByUID("client_design_archive_page", designArchive);
 }
 
 export default async function ClientDesignArchiveTemplate() {
