@@ -11,7 +11,8 @@ const getPrismicPage = () => {
   if (!designArchive) {
     return null;
   }
-
+  console.log(client);
+  console.log(designArchive);
   return client.getByUID("client_design_archive_page", designArchive);
 }
 
