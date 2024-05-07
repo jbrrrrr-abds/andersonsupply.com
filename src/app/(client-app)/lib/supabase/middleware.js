@@ -64,9 +64,7 @@ export async function updateSession(request) {
 
     } else {
       return NextResponse.redirect(new URL('/client/unauthorized/', request.url));
-
     }
-
 
   } else {
     return NextResponse.redirect(new URL('login/', request.url));
