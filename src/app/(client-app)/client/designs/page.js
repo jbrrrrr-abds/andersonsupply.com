@@ -18,16 +18,16 @@ const getPrismicPage = () => {
 }
 
 export default async function ClientDesignArchiveTemplate() {
-  const prismicData = await getPrismicPage();
-  if (!prismicData) return null;
-  const { data } = prismicData;
+  //const prismicData = await getPrismicPage();
+  //if (!prismicData) return null;
+  //const { data } = prismicData;
 
   return (
     <>
       <main>
         <h2 className="mb-12 text-4xl">{data.client_name} Designs</h2>
         <section className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5">
-          {data.design_unit.map((unit, i) => (
+          {/*data.design_unit.map((unit, i) => (
             <div key={i}>
               <div>
                 <img
@@ -43,7 +43,7 @@ export default async function ClientDesignArchiveTemplate() {
                 {unit.design_name[0].text}
               </h3>
             </div>
-          ))}
+          ))}*/}
         </section>
         </main>
     </>
@@ -51,11 +51,12 @@ export default async function ClientDesignArchiveTemplate() {
 }
 
 export async function generateStaticParams() {
-  const pages = await Client().query(
+  /*const pages = await Client().query(
     Prismic.Predicates.at("document.type", "client_design_archive_page"),
   );
   const paths = pages?.results?.map((page) => ({ slug: page.uid }));
   return paths;
+  */
 }
 
 

@@ -9,8 +9,6 @@ export async function updateSession(request) {
     },
   })
 
-  console.log(response);
-
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
@@ -56,6 +54,7 @@ export async function updateSession(request) {
       },
     }
   )
+  /*
   const user = await supabase.auth.getUser()
   console.log(user);
 
@@ -73,4 +72,7 @@ export async function updateSession(request) {
   } else {
     return NextResponse.redirect(new URL('login/', request.url));
   }
+  */
+
+  return;
 }
