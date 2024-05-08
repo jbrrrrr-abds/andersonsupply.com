@@ -25,7 +25,7 @@ export default async function ClientDesignArchiveTemplate() {
   return (
     <>
       <main>
-        <h2 className="mb-12 text-4xl">{data.client_name} Designs</h2>
+        <h2 className="mb-12 text-4xl">{/*{data.client_name}*/} Designs</h2>
         <section className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5">
           {/*data.design_unit.map((unit, i) => (
             <div key={i}>
