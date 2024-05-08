@@ -26,7 +26,6 @@
   },
   "dependencies": {
     "-": "^0.0.1",
-    "@clerk/nextjs": "^5.0.5",
     "@hookform/error-message": "^2.0.1",
     "@hookform/resolvers": "^3.3.4",
     "@netlify/next": "^1.4.9",

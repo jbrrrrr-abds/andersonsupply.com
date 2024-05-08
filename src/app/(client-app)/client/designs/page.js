@@ -8,9 +8,9 @@ const getPrismicPage = () => {
   const headersList = headers();
   const designArchive = headersList.get('designArchive');
 
-  if (!designArchive) {
+  /*if (!designArchive) {
     return null;
-  }
+  }*/
   console.log('design page');
   console.log(client);
   console.log(designArchive);
