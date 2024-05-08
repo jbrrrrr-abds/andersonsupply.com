@@ -1,6 +1,6 @@
 [build]
   base    = ""
-  command = "yarn build"
+  command = "npm build"
 
 [dev]
   targetPort = 3000
