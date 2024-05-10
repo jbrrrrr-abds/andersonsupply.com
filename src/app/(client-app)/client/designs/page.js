@@ -2,15 +2,21 @@ import React from "react";
 import { Client } from "util/prismicHelpers";
 import Prismic from "@prismicio/client";
 import { headers } from 'next/headers';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+
+const supabase = createClientComponentClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+)
 
 const getPrismicPage = () => {
   const client = Client();
   const headersList = headers();
   const designArchive = headersList.get('designArchive');
 
-  /*if (!designArchive) {
+  if (!designArchive) {
     return null;
-  }*/
+  }
   console.log('design page');
   console.log(client);
   console.log(designArchive);
@@ -18,16 +24,16 @@ const getPrismicPage = () => {
 }
 
 export default async function ClientDesignArchiveTemplate() {
-  //const prismicData = await getPrismicPage();
-  //if (!prismicData) return null;
-  //const { data } = prismicData;
+  const prismicData = await getPrismicPage();
+  if (!prismicData) return null;
+  const { data } = prismicData;
 
   return (
     <>
       <main>
         <h2 className="mb-12 text-4xl">{/*{data.client_name}*/} Designs</h2>
         <section className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5">
-          {/*data.design_unit.map((unit, i) => (
+          {data.design_unit.map((unit, i) => (
             <div key={i}>
               <div>
                 <img
@@ -43,7 +49,7 @@ export default async function ClientDesignArchiveTemplate() {
                 {unit.design_name[0].text}
               </h3>
             </div>
-          ))}*/}
+          ))}
         </section>
         </main>
     </>

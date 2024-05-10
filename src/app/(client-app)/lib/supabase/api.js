@@ -18,6 +18,5 @@ export default function createClient(req, res) {
       },
     }
   )
-
-  return supabase
+  return supabase;
 }
