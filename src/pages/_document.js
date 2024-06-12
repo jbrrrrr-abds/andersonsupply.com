@@ -80,6 +80,12 @@ export default class MyDocument extends Document {
               gtag('config', 'G-0DZLS1C28M');
             `}
           </Script>
+          <Script
+            id="prismicToolbar"
+            src={`https://static.cdn.prismic.io/prismic.js?new=true&repo=andersonbrothers`}
+            strategy="afterInteractive">
+          </Script>
+
         </Head>
 
         <body {...this.helmetBodyAttrComponents}>
