@@ -1,0 +1,29 @@
+{
+  "id": "testimonial",
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "ID"
+        }
+      },
+      "quote": {
+        "type": "Text",
+        "config": {
+          "label": "Quote"
+        }
+      },
+      "quotee": {
+        "type": "Text",
+        "config": {
+          "label": "Quotee"
+        }
+      }
+    }
+  },
+  "label": "Testimonial",
+  "repeatable": true,
+  "status": true,
+  "format": "custom"
+}

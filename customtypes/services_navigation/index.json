@@ -1,0 +1,40 @@
+{
+  "id": "services_navigation",
+  "json": {
+    "Main": {
+      "services": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Image"
+              }
+            },
+            "name": {
+              "type": "Text",
+              "config": {
+                "label": "Name"
+              }
+            },
+            "link_url": {
+              "type": "Link",
+              "config": {
+                "label": "Link Url",
+                "select": null
+              }
+            }
+          },
+          "label": "Services"
+        }
+      }
+    }
+  },
+  "label": "Services Navigation",
+  "repeatable": false,
+  "status": true,
+  "format": "custom"
+}
