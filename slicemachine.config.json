@@ -1,0 +1,9 @@
+{
+  "repositoryName": "andersonbrothers",
+  "adapter": "@slicemachine/adapter-next",
+  "options": {
+    "lazyLoadSlices": true
+  },
+  "libraries": ["./src/slices"],
+  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "landing-page-1",
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "URL Slug",
+          "placeholder": "enter url slug for the page address"
+        }
+      },
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading1",
+          "label": "title",
+          "placeholder": "enter title text line"
+        }
+      },
+      "subtitle": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading2",
+          "label": "subtitle",
+          "placeholder": "enter subtitle text line"
+        }
+      },
+      "main_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "main image"
+        }
+      },
+      "closing_line_1": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading3",
+          "label": "closing line 1"
+        }
+      },
+      "closing_line_2": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading4",
+          "label": "closing line 2"
+        }
+      }
+    }
+  },
+  "label": "LP - 2 text lines + image",
+  "repeatable": true,
+  "status": true,
+  "format": "custom"
+}
