@@ -33,15 +33,20 @@ const MyApp = ({ Component, pageProps, pageData }) => {
   return (
     <>
       <Helmet
-        htmlAttributes={{ lang: 'en' }}
+        htmlAttributes={{ lang: "en" }}
         defaultTitle="Anderson Bros Design and Supply"
         titleTemplate="%s | Anderson Bros Design and Supply"
         meta={[
-          { charset: 'UTF-8' },
-          { property: 'og:type', content: 'website' },
-          { property: 'og:url', content: `https://${process.env.SITE_URL}${asPath}` },
-          { name: 'twitter:card', content: 'summary_large_image' },
-          process.env.NO_INDEX === 'true' ? { name: 'robots', content: 'noindex' } : false,
+          { charset: "UTF-8" },
+          { property: "og:type", content: "website" },
+          {
+            property: "og:url",
+            content: `https://${process.env.SITE_URL}${asPath}`,
+          },
+          { name: "twitter:card", content: "summary_large_image" },
+          process.env.NO_INDEX === "true"
+            ? { name: "robots", content: "noindex" }
+            : false,
         ].filter(Boolean)}
       />
       <Header
@@ -79,26 +84,37 @@ const MyApp = ({ Component, pageProps, pageData }) => {
         {`
           @font-face {
             font-family: "GothamSS";
-            src: url(/fonts/GothamSSm-Book.woff2) format('woff2'),
-                  url(/fonts/GothamSSm-Book.woff) format('woff');
+            src:
+              url(/fonts/GothamSSm-Book.woff2) format("woff2"),
+              url(/fonts/GothamSSm-Book.woff) format("woff");
             font-weight: 400;
           }
           @font-face {
             font-family: "GothamSS";
-            src: url(/fonts/GothamSSm-Medium.woff2) format('woff2'),
-                  url(/fonts/GothamSSm-Medium.woff) format('woff');
+            src:
+              url(/fonts/GothamSSm-Medium.woff2) format("woff2"),
+              url(/fonts/GothamSSm-Medium.woff) format("woff");
             font-weight: 500;
           }
           @font-face {
             font-family: "GothamSS";
-            src: url(/fonts/GothamSSm-Bold.woff2) format('woff2'),
-                  url(/fonts/GothamSSm-Bold.woff) format('woff');
+            src:
+              url(/fonts/GothamSSm-Bold.woff2) format("woff2"),
+              url(/fonts/GothamSSm-Bold.woff) format("woff");
             font-weight: 700;
           }
           @font-face {
             font-family: "GothamSS";
-            src: url(/fonts/GothamSSm-Black.woff2) format('woff2'),
-                  url(/fonts/GothamSSm-Black.woff) format('woff');
+            src:
+              url(/fonts/GothamSSm-Black.woff2) format("woff2"),
+              url(/fonts/GothamSSm-Black.woff) format("woff");
+            font-weight: 900;
+          }
+          @font-face {
+            font-family: "Knockout-HTF49-Liteweight";
+            src:
+              url(/fonts/Knockout-HTF49-Liteweight.woff2) format("woff2"),
+              url(/fonts/Knockout-HTF49-Liteweight.woff) format("woff");
             font-weight: 900;
           }
         `}
