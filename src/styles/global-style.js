@@ -19,45 +19,73 @@ const GlobalStyle = createGlobalStyle`
     --spacing: 170px;
     --primary-font: "GothamSS", sans-serif;
     --secondary-font: "Anton", sans-serif;
+    --tertiary-font: "Knockout-HTF49-Liteweight", sans-serif;
     --focus-outline: 1px solid var(--gold);
 
-    ${screen.below(bp.desktopLg, `
+    ${screen.below(
+      bp.desktopLg,
+      `
       --container-width: 1440px;
       --spacing: 128px;
-    `)}
+    `,
+    )}
 
-    ${screen.below(bp.desktop, `
+    ${screen.below(
+      bp.desktop,
+      `
       --container-width: 1280px;
       --spacing: 85px;
-    `)}
+    `,
+    )}
 
-    ${screen.below(bp.laptop, `
+    ${screen.below(
+      bp.laptop,
+      `
       --container-width: 1080px;
-    `)}
+    `,
+    )}
 
-    ${screen.below(bp.laptopSm, `
+    ${screen.below(
+      bp.laptopSm,
+      `
       --container-width: 940px;
-    `)}
+    `,
+    )}
 
-    ${screen.below(bp.tablet, `
+    ${screen.below(
+      bp.tablet,
+      `
       --container-width: 768px;
-    `)}
+    `,
+    )}
 
-    ${screen.below(bp.portrait, `
+    ${screen.below(
+      bp.portrait,
+      `
       --container-width: 700px;
-    `)}
+    `,
+    )}
 
-    ${screen.below(bp.mobile, `
+    ${screen.below(
+      bp.mobile,
+      `
       --container-width: 600px;
-    `)}
+    `,
+    )}
 
-    ${screen.below(bp.mobileMid, `
+    ${screen.below(
+      bp.mobileMid,
+      `
       --container-width: 500px;
-    `)}
+    `,
+    )}
 
-    ${screen.below(bp.mobileSm, `
+    ${screen.below(
+      bp.mobileSm,
+      `
       --container-width: 335px;
-    `)}
+    `,
+    )}
   }
 
   *,

@@ -14,13 +14,17 @@ import InlineLink from 'components/InlineLink';
 const StyledSection = styled(Section)`
   position: relative;
   z-index: 1;
-  padding: 418px 0 480px;
+  padding: 418px 0 800px;
   color: var(--white);
   text-align: center;
 
   h1 {
     max-width: 1010px;
     margin: auto auto 34px;
+  }
+
+  h2 {
+    font-size: 16px;
   }
 
   p {
@@ -36,13 +40,19 @@ const StyledSection = styled(Section)`
     z-index: -1;
   }
 
-  ${screen.below(bp.desktop, `
+  ${screen.below(
+    bp.desktop,
+    `
     padding: 314px 0 360px;
-  `)}
+  `,
+  )}
 
-  ${screen.below(bp.desktopSm, `
+  ${screen.below(
+    bp.desktopSm,
+    `
     padding: 210px 0 240px;
-  `)}
+  `,
+  )}
 `;
 
 const Received = styled.div`
