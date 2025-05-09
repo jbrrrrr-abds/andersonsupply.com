@@ -1,0 +1,191 @@
+{
+  "id": "contact",
+  "json": {
+    "Main": {
+      "page_title": {
+        "type": "Text",
+        "config": {
+          "label": "Page Title",
+          "placeholder": "Contact"
+        }
+      },
+      "page_description": {
+        "type": "Text",
+        "config": {
+          "label": "Page Description"
+        }
+      },
+      "page_social_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Page Social Image"
+        }
+      },
+      "hero_headline": {
+        "type": "Text",
+        "config": {
+          "label": "Hero Headline",
+          "placeholder": "Let's Be Bros"
+        }
+      },
+      "hero_subheadline": {
+        "type": "Text",
+        "config": {
+          "label": "Hero Subheadline",
+          "placeholder": "Tell Us More"
+        }
+      },
+      "hero_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Hero Image"
+        }
+      },
+      "services_title": {
+        "type": "Text",
+        "config": {
+          "label": "Services Title",
+          "placeholder": "What Services Do You Need?"
+        }
+      },
+      "design_services_title": {
+        "type": "Text",
+        "config": {
+          "label": "Design Services Title"
+        }
+      },
+      "design_services": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "design_service": {
+              "type": "Text",
+              "config": {
+                "label": "Design Service"
+              }
+            }
+          },
+          "label": "Design Services"
+        }
+      },
+      "categories_title": {
+        "type": "Text",
+        "config": {
+          "label": "Categories Title",
+          "placeholder": "Categories"
+        }
+      },
+      "categories": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "category_image": {
+              "type": "Image",
+              "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Category Image"
+              }
+            },
+            "category_title": {
+              "type": "Text",
+              "config": {
+                "label": "Category Title"
+              }
+            }
+          },
+          "label": "Categories"
+        }
+      },
+      "alert_text": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,strong,em,hyperlink",
+          "label": "Alert Text"
+        }
+      },
+      "timeline_title": {
+        "type": "Text",
+        "config": {
+          "label": "Timeline Title",
+          "placeholder": "What is Your Budget and Timeline?"
+        }
+      },
+      "turnaround_alert_text": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,strong,em,hyperlink",
+          "label": "Turnaround Alert Text"
+        }
+      },
+      "information_title": {
+        "type": "Text",
+        "config": {
+          "label": "Information Title",
+          "placeholder": "Lets Work Together"
+        }
+      },
+      "jumbo_text": {
+        "type": "Text",
+        "config": {
+          "label": "Jumbo Text",
+          "placeholder": "Pull the Trigger"
+        }
+      },
+      "faq_link": {
+        "type": "Link",
+        "config": {
+          "label": "FAQ Link",
+          "select": null
+        }
+      },
+      "faq_link_text": {
+        "type": "Text",
+        "config": {
+          "label": "FAQ Link Text",
+          "placeholder": "Frequently Asked Questions"
+        }
+      },
+      "logo_row_one": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Logo Row One"
+        }
+      },
+      "logo_row_two": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Logo Row Two"
+        }
+      },
+      "logo_row_three": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Logo Row Three"
+        }
+      },
+      "logo_row_four": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Logo Row Four"
+        }
+      }
+    }
+  },
+  "label": "Contact",
+  "repeatable": false,
+  "status": true,
+  "format": "custom"
+}

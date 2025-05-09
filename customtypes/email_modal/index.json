@@ -1,0 +1,61 @@
+{
+  "id": "email_modal",
+  "json": {
+    "Main": {
+      "image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Image"
+        }
+      },
+      "mc_audience": {
+        "type": "Text",
+        "config": {
+          "label": "MC Audience"
+        }
+      },
+      "audience_tag": {
+        "type": "Text",
+        "config": {
+          "label": "Audience Tag",
+          "placeholder": "Optional"
+        }
+      },
+      "popup_title": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading2,heading3,heading4,heading5,heading6",
+          "label": "Popup Title",
+          "placeholder": "Stay In Touch!"
+        }
+      },
+      "popup_description": {
+        "type": "StructuredText",
+        "config": {
+          "single": "strong,em",
+          "label": "Popup Description"
+        }
+      },
+      "input_field_placeholder": {
+        "type": "Text",
+        "config": {
+          "label": "Input Field Placeholder",
+          "placeholder": "Enter your email address"
+        }
+      },
+      "button_text": {
+        "type": "Text",
+        "config": {
+          "label": "Button Text",
+          "placeholder": "Subscribe"
+        }
+      }
+    }
+  },
+  "label": "Email Modal",
+  "repeatable": false,
+  "status": true,
+  "format": "custom"
+}

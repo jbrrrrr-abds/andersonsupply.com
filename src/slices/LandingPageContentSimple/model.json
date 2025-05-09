@@ -1,0 +1,55 @@
+{
+  "id": "landing_page_content_simple",
+  "type": "SharedSlice",
+  "name": "LandingPageContentSimple",
+  "description": "LandingPageContentSimple",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title_line_1": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": "Enter "
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": ""
+          }
+        },
+        "text_line_01": {
+          "type": "Text",
+          "config": {
+            "label": "Text Line 01",
+            "placeholder": ""
+          }
+        },
+        "text_line_02": {
+          "type": "Text",
+          "config": {
+            "label": "Text Line 02",
+            "placeholder": ""
+          }
+        },
+        "lp_image": {
+          "type": "Image",
+          "config": {
+            "label": "LP Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

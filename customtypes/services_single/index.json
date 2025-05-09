@@ -1,0 +1,189 @@
+{
+  "id": "services_single",
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Slug"
+        }
+      },
+      "page_title": {
+        "type": "Text",
+        "config": {
+          "label": "Page Title"
+        }
+      },
+      "page_description": {
+        "type": "Text",
+        "config": {
+          "label": "Page Description"
+        }
+      },
+      "page_social_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Page Social Image"
+        }
+      },
+      "hero_title": {
+        "type": "Text",
+        "config": {
+          "label": "Hero Title"
+        }
+      },
+      "hero_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Hero Image"
+        }
+      },
+      "intro_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Intro Image"
+        }
+      },
+      "intro_title": {
+        "type": "Text",
+        "config": {
+          "label": "Intro Title"
+        }
+      },
+      "intro_description": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+          "label": "Intro Description"
+        }
+      },
+      "image_grid_left_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Image Grid Left Image"
+        }
+      },
+      "image_grid_right_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Image Grid Right Image"
+        }
+      },
+      "video_id": {
+        "type": "Text",
+        "config": {
+          "label": "Video ID",
+          "placeholder": "KIqQ0gowzt4"
+        }
+      },
+      "quote_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Quote Image"
+        }
+      },
+      "quote": {
+        "type": "Text",
+        "config": {
+          "label": "Quote"
+        }
+      },
+      "quotee": {
+        "type": "Text",
+        "config": {
+          "label": "Quotee"
+        }
+      },
+      "quote_title": {
+        "type": "Text",
+        "config": {
+          "label": "Quote Title"
+        }
+      },
+      "quote_description": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+          "label": "Quote Description"
+        }
+      },
+      "quote_link_text": {
+        "type": "Text",
+        "config": {
+          "label": "Quote Link Text"
+        }
+      },
+      "quote_link": {
+        "type": "Link",
+        "config": {
+          "label": "Quote Link",
+          "select": null
+        }
+      },
+      "value_title": {
+        "type": "Text",
+        "config": {
+          "label": "Value Title"
+        }
+      },
+      "value_sub_title": {
+        "type": "Text",
+        "config": {
+          "label": "Value Sub Title"
+        }
+      },
+      "value_description": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+          "label": "Value Description"
+        }
+      },
+      "value_link": {
+        "type": "Link",
+        "config": {
+          "label": "Value Link",
+          "select": null
+        }
+      },
+      "value_link_text": {
+        "type": "Text",
+        "config": {
+          "label": "Value Link Text"
+        }
+      },
+      "value_image_left": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Value Image Left"
+        }
+      },
+      "value_image_right": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Value Image Right"
+        }
+      }
+    }
+  },
+  "label": "Services Single",
+  "repeatable": true,
+  "status": true,
+  "format": "custom"
+}
