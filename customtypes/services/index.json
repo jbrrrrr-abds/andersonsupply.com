@@ -1,0 +1,112 @@
+{
+  "id": "services",
+  "json": {
+    "Main": {
+      "page_title": {
+        "type": "Text",
+        "config": {
+          "label": "Page Title",
+          "placeholder": "Services"
+        }
+      },
+      "page_description": {
+        "type": "Text",
+        "config": {
+          "label": "Page Description"
+        }
+      },
+      "page_social_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Page Social Image"
+        }
+      },
+      "list_title": {
+        "type": "Text",
+        "config": {
+          "label": "List Title",
+          "placeholder": "D*mn Good Quality"
+        }
+      },
+      "list_description": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+          "label": "List Description"
+        }
+      },
+      "services": {
+        "type": "Link",
+        "config": {
+          "select": "document",
+          "customtypes": ["services_navigation"],
+          "label": "Services"
+        }
+      },
+      "logo_grid": {
+        "type": "Link",
+        "config": {
+          "select": "document",
+          "customtypes": ["logo_grid"],
+          "label": "Logo Grid"
+        }
+      },
+      "clients_title": {
+        "type": "Text",
+        "config": {
+          "label": "Clients Title",
+          "placeholder": "You Are In Good Company"
+        }
+      },
+      "two_column_title": {
+        "type": "Text",
+        "config": {
+          "label": "Two Column Title"
+        }
+      },
+      "two_column_description": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+          "label": "Two Column Description"
+        }
+      },
+      "two_column_link_text": {
+        "type": "Text",
+        "config": {
+          "label": "Two Column Link Text",
+          "placeholder": "Hire Us"
+        }
+      },
+      "two_column_link": {
+        "type": "Link",
+        "config": {
+          "label": "Two Column Link",
+          "select": null
+        }
+      },
+      "two_column_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Two Column Image"
+        }
+      },
+      "two_column_graphic": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Two Column Graphic"
+        }
+      }
+    }
+  },
+  "label": "Services",
+  "repeatable": false,
+  "status": true,
+  "format": "custom"
+}

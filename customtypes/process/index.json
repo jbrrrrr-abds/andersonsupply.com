@@ -1,0 +1,304 @@
+{
+  "id": "process",
+  "json": {
+    "Main": {
+      "page_title": {
+        "type": "Text",
+        "config": {
+          "label": "Page Title",
+          "placeholder": "Our Process"
+        }
+      },
+      "page_description": {
+        "type": "Text",
+        "config": {
+          "label": "Page Description"
+        }
+      },
+      "page_social_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Page Social Image"
+        }
+      },
+      "hero_title": {
+        "type": "Text",
+        "config": {
+          "label": "Hero Title",
+          "placeholder": "The Customer Experience"
+        }
+      },
+      "hero_sub_title": {
+        "type": "Text",
+        "config": {
+          "label": "Hero Sub Title",
+          "placeholder": "We Keep it Simple So Your Brand Shines"
+        }
+      },
+      "hero_description": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+          "label": "Hero Description"
+        }
+      },
+      "hero_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Hero Image"
+        }
+      },
+      "hero_video_id": {
+        "type": "Text",
+        "config": {
+          "label": "Hero Video ID",
+          "placeholder": "EobMnSpjfTU"
+        }
+      },
+      "intro_title": {
+        "type": "Text",
+        "config": {
+          "label": "Intro Title",
+          "placeholder": "What to Expect"
+        }
+      },
+      "intro_description": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+          "label": "Intro Description"
+        }
+      },
+      "intro_graphic": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Intro Graphic"
+        }
+      },
+      "steps": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Image"
+              }
+            },
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title"
+              }
+            },
+            "description": {
+              "type": "StructuredText",
+              "config": {
+                "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+                "label": "Description"
+              }
+            },
+            "link_text": {
+              "type": "Text",
+              "config": {
+                "label": "Link Text"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "select": null
+              }
+            }
+          },
+          "label": "Steps"
+        }
+      },
+      "image_grid_title": {
+        "type": "Text",
+        "config": {
+          "label": "Image Grid Title",
+          "placeholder": "We're Here For You"
+        }
+      },
+      "image_grid_description": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,strong,em,hyperlink",
+          "label": "Image Grid Description"
+        }
+      },
+      "image_grid_image_one": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Image Grid Image One"
+        }
+      },
+      "image_grid_image_two": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Image Grid Image Two"
+        }
+      },
+      "image_grid_image_three": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Image Grid Image Three"
+        }
+      },
+      "image_grid_image_four": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Image Grid Image Four"
+        }
+      },
+      "image_grid_graphic": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Image Grid Graphic"
+        }
+      },
+      "image_grid_link_text": {
+        "type": "Text",
+        "config": {
+          "label": "Image Grid Link Text",
+          "placeholder": "Hire Us"
+        }
+      },
+      "image_grid_link": {
+        "type": "Link",
+        "config": {
+          "label": "Image Grid Link",
+          "select": null
+        }
+      },
+      "quote_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Quote Image"
+        }
+      },
+      "quote": {
+        "type": "Text",
+        "config": {
+          "label": "Quote"
+        }
+      },
+      "quotee": {
+        "type": "Text",
+        "config": {
+          "label": "Quotee"
+        }
+      },
+      "quote_title": {
+        "type": "Text",
+        "config": {
+          "label": "Quote Title"
+        }
+      },
+      "quote_description": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+          "label": "Quote Description"
+        }
+      },
+      "quote_link": {
+        "type": "Link",
+        "config": {
+          "label": "Quote Link",
+          "select": null
+        }
+      },
+      "quote_link_text": {
+        "type": "Text",
+        "config": {
+          "label": "Quote Link Text"
+        }
+      },
+      "two_column_left_title": {
+        "type": "Text",
+        "config": {
+          "label": "Two Column Left Title",
+          "placeholder": "Let's Be Bros"
+        }
+      },
+      "two_column_left_link_text": {
+        "type": "Text",
+        "config": {
+          "label": "Two Column Left Link Text",
+          "placeholder": "Hire Us"
+        }
+      },
+      "two_column_left_link": {
+        "type": "Link",
+        "config": {
+          "label": "Two Column Left Link",
+          "select": null
+        }
+      },
+      "two_column_left_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Two Column Left Image"
+        }
+      },
+      "two_column_right_title": {
+        "type": "Text",
+        "config": {
+          "label": "Two Column Right Title",
+          "placeholder": "We've Got Your Six"
+        }
+      },
+      "two_column_right_link_text": {
+        "type": "Text",
+        "config": {
+          "label": "Two Column Right Link Text",
+          "placeholder": "Customer Support"
+        }
+      },
+      "two_column_right_link": {
+        "type": "Link",
+        "config": {
+          "label": "Two Column Right Link",
+          "select": null
+        }
+      },
+      "two_column_right_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Two Column Right Image"
+        }
+      }
+    }
+  },
+  "label": "Process",
+  "repeatable": false,
+  "status": true,
+  "format": "custom"
+}

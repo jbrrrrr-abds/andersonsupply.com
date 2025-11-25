@@ -1,0 +1,234 @@
+{
+  "id": "about",
+  "json": {
+    "Main": {
+      "page_title": {
+        "type": "Text",
+        "config": {
+          "label": "Page Title",
+          "placeholder": "About Us"
+        }
+      },
+      "page_description": {
+        "type": "Text",
+        "config": {
+          "label": "Page Description",
+          "placeholder": "Learn about us..."
+        }
+      },
+      "page_social_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Page Social Image"
+        }
+      },
+      "hero_top_text": {
+        "type": "Text",
+        "config": {
+          "label": "Hero Top Text",
+          "placeholder": "The"
+        }
+      },
+      "hero_bottom_text": {
+        "type": "Text",
+        "config": {
+          "label": "Hero Bottom Text",
+          "placeholder": "Story"
+        }
+      },
+      "hero_video": {
+        "type": "Link",
+        "config": {
+          "select": "media",
+          "label": "Hero Video"
+        }
+      },
+      "hero_video_id": {
+        "type": "Text",
+        "config": {
+          "label": "Hero Video Id",
+          "placeholder": "_Jqi9k3tXoQ"
+        }
+      },
+      "intro_title": {
+        "type": "Text",
+        "config": {
+          "label": "Intro Title",
+          "placeholder": "About Us"
+        }
+      },
+      "intro_sub_title": {
+        "type": "Text",
+        "config": {
+          "label": "Intro Sub Title",
+          "placeholder": "Our Studio & General Store"
+        }
+      },
+      "intro_description": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+          "label": "Intro Description"
+        }
+      },
+      "intro_carousel": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "left_image": {
+              "type": "Image",
+              "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Left Image"
+              }
+            },
+            "right_image": {
+              "type": "Image",
+              "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Right Image"
+              }
+            }
+          },
+          "label": "Intro Carousel"
+        }
+      },
+      "two_column_title": {
+        "type": "Text",
+        "config": {
+          "label": "Two Column Title",
+          "placeholder": "Our History"
+        }
+      },
+      "two_column_description": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+          "label": "Two Column Description"
+        }
+      },
+      "two_column_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Two Column Image"
+        }
+      },
+      "team_grid_title": {
+        "type": "Text",
+        "config": {
+          "label": "Team Grid Title",
+          "placeholder": "The Team"
+        }
+      },
+      "team_member": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Image"
+              }
+            },
+            "name": {
+              "type": "Text",
+              "config": {
+                "label": "Name"
+              }
+            },
+            "job_title": {
+              "type": "Text",
+              "config": {
+                "label": "Job Title"
+              }
+            }
+          },
+          "label": "Team Member"
+        }
+      },
+      "team_grid_link_top_text": {
+        "type": "Text",
+        "config": {
+          "label": "Team Grid Link Top Text",
+          "placeholder": "We're Growing"
+        }
+      },
+      "team_grid_link_bottom_text": {
+        "type": "Text",
+        "config": {
+          "label": "Team Grid Link Bottom Text",
+          "placeholder": "Join the Family"
+        }
+      },
+      "team_grid_link": {
+        "type": "Link",
+        "config": {
+          "label": "Team Grid Link",
+          "select": null
+        }
+      },
+      "pre_footer_title": {
+        "type": "Text",
+        "config": {
+          "label": "Pre Footer Title",
+          "placeholder": "Really D*mn Good Stuff"
+        }
+      },
+      "pre_footer_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Pre Footer Image"
+        }
+      },
+      "pre_footer_caption": {
+        "type": "Text",
+        "config": {
+          "label": "Pre Footer Caption",
+          "placeholder": "The DUKE"
+        }
+      },
+      "pre_footer_sub_caption": {
+        "type": "Text",
+        "config": {
+          "label": "Pre Footer Sub Caption",
+          "placeholder": "Mascot"
+        }
+      },
+      "pre_footer_description": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+          "label": "Pre Footer Description"
+        }
+      },
+      "pre_footer_link_text": {
+        "type": "Text",
+        "config": {
+          "label": "Pre Footer Link Text",
+          "placeholder": "View Services"
+        }
+      },
+      "pre_footer_link": {
+        "type": "Link",
+        "config": {
+          "label": "Pre Footer Link",
+          "select": null
+        }
+      }
+    }
+  },
+  "label": "About",
+  "repeatable": false,
+  "status": true,
+  "format": "custom"
+}

@@ -1,0 +1,57 @@
+{
+  "id": "client_design_archive_page",
+  "json": {
+    "Main": {
+      "client_name": {
+        "type": "Text",
+        "config": {
+          "label": "Client Name"
+        }
+      },
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Page Slug",
+          "placeholder": "client-name + -designs (i.e. sierra-nevada-designs)"
+        }
+      },
+      "design_unit": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "design_artwork": {
+              "type": "Image",
+              "config": {
+                "constraint": {
+                  "width": 1600,
+                  "height": 1600
+                },
+                "thumbnails": [],
+                "label": "Design Artwork"
+              }
+            },
+            "design_name": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1",
+                "label": "Design Name"
+              }
+            },
+            "description": {
+              "type": "StructuredText",
+              "config": {
+                "multi": "paragraph,strong,em",
+                "label": "Description"
+              }
+            }
+          },
+          "label": "Design Unit"
+        }
+      }
+    }
+  },
+  "label": "Client Design Archive Page",
+  "repeatable": true,
+  "status": true,
+  "format": "custom"
+}
