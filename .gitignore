@@ -87,3 +87,6 @@ out
 
 # Exception for GSAP .tgz
 !gsap/gsap-bonus.tgz
+
+# Mise
+mise.toml
