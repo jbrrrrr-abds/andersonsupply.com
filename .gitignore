@@ -90,3 +90,6 @@ out
 
 # Mise
 mise.toml
+
+# Netlify
+.netlify/
