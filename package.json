@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider next build && npx serve @latest/export",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider next build && npx serve -s out",
     "export": "NODE_OPTIONS=--openssl-legacy-provider yarn build && next export",
     "postexport": "node scripts/getSitemap.js",
     "start": "next start",
@@ -82,7 +82,8 @@
     "pre-commit": "^1.0.10",
     "prismic-dom": "^2.2.7",
     "stylelint": "^16.2.1",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "webpack-dev-server": "^5.2.2"
   },
   "eslintIgnore": [
     "public/**",
