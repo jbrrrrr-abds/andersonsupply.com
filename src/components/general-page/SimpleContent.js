@@ -66,8 +66,7 @@ const SimpleContent = ({
 }) => (
   <StyledSection>
     <Container>
-      <Content dangerouslySetInnerHTML={{__html: content}}>
-      </Content>
+      <Content dangerouslySetInnerHTML={{__html: content}}></Content>
       <ImageClear>
       </ImageClear>
     </Container>
