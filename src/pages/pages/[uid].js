@@ -2,7 +2,10 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Client } from 'util/prismicHelpers';
 import Prismic from '@prismicio/client';
+import PrismicDom from 'prismic-dom';
+import Hero from 'components/general-page/Hero';
 import Modal from 'components/Modal';
+import SimpleContent from 'components/general-page/SimpleContent';
 import { useModal } from 'components/Modal/GullsModal';
 import YouTubeModal from 'components/Modal/YouTubeModal';
 
@@ -13,6 +16,8 @@ const ContentPageSingle = ({ page, marquee }) => {
 
   const { data } = page;
   const { data: marqueeData } = marquee;
+
+  const html_content = PrismicDom.RichText.asHtml(data.page_content)
 
   return (
     <>
@@ -29,8 +34,13 @@ const ContentPageSingle = ({ page, marquee }) => {
         ]}
       />
       <main>
-
+        <Hero
+          title={data.page_title}
+        />
       </main>
+      <SimpleContent
+        content={html_content}
+      />
       <Modal>
         <YouTubeModal youTubeID={modalOpen} />
       </Modal>
