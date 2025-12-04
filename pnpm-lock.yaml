@@ -14,6 +14,9 @@ importers:
       '@next/third-parties':
         specifier: ^14.0.5-canary.38
         version: 14.2.33(next@14.2.33(@babel/core@7.28.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+      '@prismicio/client':
+        specifier: ^4.0.0
+        version: 4.0.0
       axios:
         specifier: ^1.6.7
         version: 1.13.2
@@ -44,6 +47,9 @@ importers:
       gsap:
         specifier: ./gsap/gsap-bonus.tgz
         version: file:gsap/gsap-bonus.tgz
+      next:
+        specifier: ^14.1.0
+        version: 14.2.33(@babel/core@7.28.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       polished:
         specifier: ^3.4.1
         version: 3.7.2
@@ -114,9 +120,6 @@ importers:
       '@next/eslint-plugin-next':
         specifier: ^14.1.0
         version: 14.2.33
-      '@prismicio/client':
-        specifier: ^4.0.0
-        version: 4.0.0
       '@testing-library/jest-dom':
         specifier: ^5.1.1
         version: 5.17.0
@@ -147,9 +150,6 @@ importers:
       lint-staged:
         specifier: ^7.0.0
         version: 7.3.0
-      next:
-        specifier: ^14.2.33
-        version: 14.2.33(@babel/core@7.28.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       pre-commit:
         specifier: ^1.2.2
         version: 1.2.2
