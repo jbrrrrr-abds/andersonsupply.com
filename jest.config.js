@@ -8,36 +8,21 @@ const createJestConfig = nextJest({
 // Add any custom config to be passed to Jest
 const config = {
   coverageProvider: 'v8',
+  collectCoverageFrom: [
+    '**/*.{js,jsx,ts,tsx}',
+    '!**/*.d.ts',
+    '!**/node_modules/**',
+  ],
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
   moduleNameMapper: {
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
   },
   moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
-  modulePaths: ["<rootDir>/src/"]
-
+  modulePaths: ["<rootDir>/src/"],
   // Add more setup options before each test is run
-  // setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
 }
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
 export default createJestConfig(config);
-
-
-//module.exports = {
-  //collectCoverageFrom: [
-    //'**/*.{js,jsx,ts,tsx}',
-    //'!**/*.d.ts',
-    //'!**/node_modules/**',
-  //],
-  //setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
-  //testPathIgnorePatterns: ['/node_modules/', '/.next/'],
-  //moduleNameMapper: {
-    //'^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
-  //},
-  //transformIgnorePatterns: ['node_modules/(?!(sucrase)/)'],
- // transform: {
- //   '^.+\\.(js|jsx|ts|tsx|mjs)$': 'babel-jest',
-  //},
-//  moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
-//};
