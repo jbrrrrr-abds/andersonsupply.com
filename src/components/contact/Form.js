@@ -49,6 +49,7 @@ const FormWrapper = styled.section`
 
 const StyledForm = styled.form`
   --gap: 36px;
+
   position: relative;
   text-align: center;
 
@@ -125,7 +126,7 @@ const CategoryWrap = styled.div`
     z-index: 1;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(28, 28, 30, 0) 70%, rgba(10, 10, 11, 0) 70%, #0a0a0b 100%);
+    background: linear-gradient(180deg, rgb(28 28 30 / 0%) 70%, rgb(10 10 11 / 0%) 70%, #0a0a0b 100%);
     content: "";
   }
 `;
@@ -249,6 +250,7 @@ const FaqLink = styled(InlineLink)`
 
 const RangeSection = styled(Section)`
   --bottom-spacing: 212px;
+
   position: relative;
   padding: var(--spacing) 0 var(--bottom-spacing);
   overflow: hidden;
@@ -473,6 +475,7 @@ const RangeMessage = styled.div`
 
 const RangeSpeaker = styled.div`
   --speaker-position: 0;
+
   position: absolute;
   bottom: calc((var(--bottom-spacing) * -1) - 30px);
   ${props => props.alignedLeft ? 'left: var(--speaker-position)' : 'right: var(--speaker-position)'};
@@ -503,6 +506,7 @@ const RangeValue = styled.span`
 const RangeJumboValue = styled.div`
   --left: -308px;
   --right: -352px;
+
   position: absolute;
   top: 50%;
   ${props => props.alignedLeft ? 'left: var(--left)' : 'right: var(--right)'};
@@ -1435,7 +1439,7 @@ const Form = ({
             null
           }
 
-          {faqLink ?
+          {faqLink.href ?
             <FaqLink
               href={linkResolver(faqLink)}
             >
