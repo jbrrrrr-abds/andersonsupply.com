@@ -49,7 +49,7 @@ const LogosContainer = styled.div`
 const LogosRow = styled.div`
   font-size: 0;
   display: flex;
-  flex-wrap: no-wrap;
+  flex-wrap: nowrap;
   margin: 10px 0;
   animation: 32s ${toTheLeft} infinite linear;
 

@@ -5,7 +5,7 @@ const VisuallyHidden = styled.div`
   position: absolute;
   top: 0;
   left: -999px;
-  clip: rect(0, 0, 0, 0);
+  visibility: hidden;
   pointer-events: none;
 `;
 

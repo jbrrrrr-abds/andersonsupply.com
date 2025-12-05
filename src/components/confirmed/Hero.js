@@ -76,7 +76,7 @@ const Received = styled.div`
 
 const LinkWrap = styled.div`
   display: grid;
-  grid-auto-flow: columns;
+  grid-auto-flow: column;
   gap: 20px;
   justify-content: center;
 `;
