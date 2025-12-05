@@ -15,7 +15,7 @@ import TextBlock from '../TextBlock';
 
 const StepGrid = styled(Grid)`
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 0;
+  gap: 0;
 
   &:nth-of-type(odd) {
     grid-template-areas: "content image";

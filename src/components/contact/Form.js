@@ -88,7 +88,7 @@ const InfoFieldset = styled(Fieldset)`
 `;
 
 const DesignGrid = styled(Grid)`
-  grid-column-gap: var(--gap);
+  column-gap: var(--gap);
 
   ${screen.above(bp.laptopSm, `
     grid-template-columns: repeat(3, 1fr);
@@ -101,7 +101,7 @@ const DesignGrid = styled(Grid)`
 
 const CategoryGrid = styled(Grid)`
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
+  gap: 20px;
 
   ${screen.below(bp.laptop, `
     grid-template-columns: repeat(3, 1fr);
@@ -315,7 +315,7 @@ const KnobWrapper = styled.div`
 
 const RangeGrid = styled(Grid)`
   grid-template-columns: repeat(2, 80px);
-  grid-gap: 280px;
+  gap: 280px;
 
   ${screen.below(bp.desktopSm, `
     grid-gap: 210px;
@@ -554,7 +554,7 @@ const RangeJumboValue = styled.div`
 `;
 
 const RadioGrid = styled(Grid)`
-  grid-gap: var(--gap);
+  gap: var(--gap);
 
   ${screen.above(bp.laptopSm, `
     grid-template-columns: repeat(2, 1fr);

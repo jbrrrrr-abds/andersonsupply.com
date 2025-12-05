@@ -1,10 +1,16 @@
 {
   "extends": [
-  "stylelint-config-standard"
+    "stylelint-config-standard"
   ],
   "rules": {
     "selector-class-pattern": null,
-    "custom-property-pattern": null
+    "custom-property-pattern": null,
+    "nesting-selector-no-missing-scoping-root": null
   },
-  "customSyntax": "postcss-styled-syntax"
+  "overrides": [
+    {
+      "files": ["./src/**/!(*.spec).{js,jsx}"],
+      "customSyntax": "postcss-styled-syntax"
+    }
+  ]
 }

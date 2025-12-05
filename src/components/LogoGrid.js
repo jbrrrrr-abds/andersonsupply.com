@@ -17,7 +17,7 @@ const StyledSection = styled(Section)`
 
 const LogosWrapper = styled(Grid)`
   grid-template-columns: repeat(10, 1fr);
-  grid-gap: 60px 40px;
+  gap: 60px 40px;
   width: 150%;
 
   li {

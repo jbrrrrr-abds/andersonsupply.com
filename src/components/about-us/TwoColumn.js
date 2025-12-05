@@ -9,7 +9,7 @@ import LazyImg from '../LazyImg';
 import TextBlock from '../TextBlock';
 
 const StyledGrid = styled(Grid)`
-  grid-gap: 0;
+  gap: 0;
 
   ${screen.above(bp.tablet, `
     grid-template-columns: repeat(2, 1fr);

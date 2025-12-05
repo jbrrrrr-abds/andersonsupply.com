@@ -24,7 +24,7 @@ const StyledSection = styled(Section)`
 
 const StyledGrid = styled(Grid)`
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 48px 20px;
+  gap: 48px 20px;
   max-width: 1395px;
   margin: auto;
 

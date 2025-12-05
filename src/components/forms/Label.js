@@ -12,7 +12,7 @@ const Label = styled.label`
     `
       position: absolute;
       pointer-events: none;
-      clip: rect(0 0 0 0);
+      visibility: hidden;
       overflow: hidden;
     `}
 `;

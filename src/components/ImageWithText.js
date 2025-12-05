@@ -7,7 +7,7 @@ import LazyImg from './LazyImg';
 
 const StyledGrid = styled(Grid)`
   grid-template-columns: ${props => props.imageLeft ? '1.26fr 1fr' : '1fr 1.26fr'};
-  grid-gap: 170px;
+  gap: 170px;
   align-items: center;
 
   ${screen.below(bp.desktop, `

@@ -60,7 +60,7 @@ const GridTitle = styled.span`
 const StyledGrid = styled(Grid)`
   position: relative;
   grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 170px;
+  column-gap: 170px;
   max-width: 1000px;
   margin: 26px auto 34px;
 
