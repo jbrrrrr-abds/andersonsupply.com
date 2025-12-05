@@ -12,7 +12,7 @@
     "lint:css": "stylelint './src/**/*.js'",
     "lint-staged": "lint-staged",
     "prettier": "prettier ./src/**/*",
-    "test": "jest"
+    "test": "jest && playwright test"
   },
   "pre-commit": [
     "lint-staged"
