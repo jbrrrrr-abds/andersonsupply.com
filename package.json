@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "lint:css": "stylelint './src/**/*.js'",
+    "lint:css": "stylelint 'src/**/*.js'",
+    "lint:cssfix": "stylelint 'src/**/*.js' --fix",
     "lint-staged": "lint-staged",
     "prettier": "prettier ./src/**/*",
     "test": "jest && playwright test"
@@ -20,7 +21,7 @@
   "lint-staged": {
     "*.js": [
       "eslint --fix",
-      "stylelint"
+      "stylelint --fix"
     ]
   },
   "dependencies": {
@@ -50,13 +51,13 @@
     "react-intersection-observer": "^8.24.1",
     "react-modal": "^3.13.1",
     "react-scrolllock": "^5.0.1",
-    "react-transition-group": "^4.4.1",
+    "react-transition-group": "^4.4.5",
     "styled-components": "^5.1.0",
     "stylelint-config-standard": "^36.0.0",
     "superior-mq": "^1.0.1",
     "use-is-tabbing": "^0.1.1",
     "use-onclickoutside": "^0.3.2",
-    "zustand": "^4.5.0"
+    "zustand": "^5.0.9"
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
@@ -83,7 +84,9 @@
     "playwright": "^1.57.0",
     "pre-commit": "^1.0.10",
     "prismic-dom": "^2.2.7",
+    "react-transitioning": "^1.0.9",
     "stylelint": "^16.2.1",
+    "stylelint-selector-bem-pattern": "^4.0.1",
     "ts-node": "^10.9.2",
     "webpack-dev-server": "^5.2.2"
   },
