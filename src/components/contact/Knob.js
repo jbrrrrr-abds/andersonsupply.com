@@ -5,6 +5,7 @@ import { bp } from '../../styles/helpers';
 
 const KnobWrapper = styled.div`
   --indicator-size: 164px;
+
   position: relative;
   width: var(--indicator-size);
 
@@ -21,6 +22,7 @@ const Indicators = styled.svg`
 
 const TheKnob = styled.div`
   --knob-size: 117px;
+
   width: var(--knob-size);
   height: var(--knob-size);
   border-radius: 100%;
@@ -29,8 +31,7 @@ const TheKnob = styled.div`
   left: 0;
   right: 0;
   margin: 0 auto;
-
-  box-shadow: 3px 6px 1px rgba(0, 0, 0, .1);
+  box-shadow: 3px 6px 1px rgb(0 0 0 / 10%);
 
   ${screen.below(bp.mobile, `
     --knob-size: 88px;

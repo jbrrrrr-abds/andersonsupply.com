@@ -10,6 +10,7 @@ import TextBlock from '../TextBlock';
 
 const StyledSection = styled(Section)`
   --left-spacing: 144px;
+
   padding: 290px 0 var(--spacing);
   color: var(--brand-white);
   position: relative;

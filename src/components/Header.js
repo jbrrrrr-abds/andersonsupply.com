@@ -20,6 +20,7 @@ import UnstyledButton from './UnstyledButton';
 
 const StyledHeader = styled.header`
   --item-color: var(--${props => props.color === 'dark' ? 'brand-dark' : 'brand-white'});
+
   position: fixed;
   z-index: 9;
   width: 100%;
@@ -227,6 +228,7 @@ const NavButton = styled(Button)`
 
 const MobileMenuToggle = styled(UnstyledButton)`
   --toggle-color: var(--${props => props.color === 'dark' ? 'brand-black' : 'brand-white'});
+
   ${props => props.$navState !== 'full' && '--toggle-color: var(--brand-white);'}
   position: relative;
   order: 3;

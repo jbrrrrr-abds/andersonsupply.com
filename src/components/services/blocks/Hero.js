@@ -10,7 +10,7 @@ const StyledHero = styled.div`
   position: relative;
   padding: 380px 0 284px;
   color: var(--brand-white);
-  background: linear-gradient(180deg, rgba(0, 0, 0, .47) 11.9%, rgba(0, 0, 0, 0));
+  background: linear-gradient(180deg, rgb(0 0 0 / 47%) 11.9%, rgb(0 0 0 / 0%));
   text-align: center;
 
   ${screen.below(bp.desktop, `

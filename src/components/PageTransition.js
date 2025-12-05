@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { TransitionGroup, CSSTransition } from 'react-transitioning';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
@@ -65,11 +65,10 @@ const MainWrapper = styled.div`
 
   &.page-enter-active,
   &.page-exit-active {
-
     .page-transition-inner {
       height: 100vh;
       overflow: hidden;
-      box-shadow: 0 0 0 30px var(--light-gray), 0 30px 60px rgba(0, 0, 0, .4);
+      box-shadow: 0 0 0 30px var(--light-gray), 0 30px 60px rgb(0 0 0 / 40%);
       animation: ${duration}ms ${transitionOutZoom} cubic-bezier(.45, 0, .55, 1);
       animation-fill-mode: both;
     }
@@ -118,18 +117,22 @@ const PageTransition = ({
   };
 
   return (
-    <TransitionGroup className={transitionState ? 'transitioning' : ''}>
+    <TransitionGroup className={transitionState ? 'transitioning' : ''} appear enter exit>
       <CSSTransition
         timeout={duration}
         classNames="page"
         key={route}
+        enter
+        exit
+        in
         onEnter={playTransition}
         onExited={stopTransition}
       >
         <MainWrapper
           routingPageOffset={routingPageOffset}
+          appear
         >
-          <SecondaryWrapper className="page-transition-inner">
+          <SecondaryWrapper className="page-transition-inner" appear enter exit>
             {children}
           </SecondaryWrapper>
         </MainWrapper>

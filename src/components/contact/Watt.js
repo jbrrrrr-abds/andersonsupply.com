@@ -5,7 +5,7 @@ import gsap from 'gsap';
 const WattMeter = styled.svg`
   display: block;
   width: 332px;
-  margin: 64px auto 64px;
+  margin: 64px auto;
 `;
 
 const Watt = ({ budget = '10000', timeline = '5', budgetMin, budgetMax, timelineMin, timelineMax }) => {

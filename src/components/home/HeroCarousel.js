@@ -30,7 +30,7 @@ const SlideWrap = styled.div`
     z-index: 2;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, .62) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(180deg, rgb(0 0 0 / 62%) 0%, rgb(0 0 0 / 0%) 100%);
     content: "";
   }
 `;

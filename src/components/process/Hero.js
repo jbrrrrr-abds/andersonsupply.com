@@ -95,7 +95,7 @@ const Arrow = styled.div`
   button {
     cursor: pointer;
     transition: color 300ms ease;
-    color: currentColor;
+    color: currentcolor;
     padding: 0 10px;
     margin-left: -10px;
 

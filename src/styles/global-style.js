@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     --brand-white: #f0eee3;
     --gold: #b48645;
     --light-gray: #f4f4f4;
-    --border-color: rgba(240, 238, 227, .2);
+    --border-color: rgb(240 238 227 / 20%);
     --spacing: 170px;
     --primary-font: "GothamSS", sans-serif;
     --secondary-font: "Anton", sans-serif;

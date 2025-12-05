@@ -19,6 +19,7 @@ const toTheLeft = keyframes`
 
 const Wrapper = styled(Section)`
   --title-width: 400px;
+
   position: relative;
   padding: ${props => props.title ? '372px 0 308px' : '380px 0'};
   color: var(--brand-white);

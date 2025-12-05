@@ -21,6 +21,7 @@ const MaskedVideo = styled(LazyVideo)`
   height: calc(100% - 2px);
   width: calc(100% - 2px);
 
+  /* stylelint-disable-line */
   .ReactModal__Body--open & {
     opacity: 0;
   }
