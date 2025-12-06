@@ -3,7 +3,6 @@
     "next"
   ],
   "plugins": [
-    "react-hooks"
   ],
   "rules": {
     "jsx-a11y/anchor-is-valid": [
