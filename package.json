@@ -84,7 +84,6 @@
     "playwright": "^1.57.0",
     "postcss-styled-syntax": "^0.6.4",
     "pre-commit": "^1.2.2",
-    "prismic-dom": "^2.2.7",
     "react-transitioning": "^1.0.9",
     "stylelint": "^16.26.1",
     "stylelint-selector-bem-pattern": "^4.0.1",
