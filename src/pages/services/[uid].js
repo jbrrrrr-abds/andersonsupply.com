@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Client } from 'util/prismicHelpers';
-import Prismic from '@prismicio/client';
+import * as prismic from "@prismicio/client";
 import Hero from 'components/services/blocks/Hero';
 import Intro from 'components/services/blocks/Intro';
 import Video from 'components/services/blocks/Video';
@@ -95,7 +95,9 @@ export async function getStaticProps({ params, preview = null, previewData = {} 
 }
 
 export async function getStaticPaths() {
-  const pages = await Client().query(Prismic.Predicates.at('document.type', 'services_single'));
+  const pages = await Client().query(
+    prismic.predicate.at("document.type", "services_single"),
+  );
   const paths = pages?.results?.map(page => ({ params: { uid: page.uid } }));
 
   return {

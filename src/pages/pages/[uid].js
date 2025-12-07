@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Client } from 'util/prismicHelpers';
-import Prismic from '@prismicio/client';
+import * as prismic from "@prismicio/client";
 import * as prismicH from "@prismicio/helpers";
 import Hero from "components/general-page/Hero";
 import Modal from "components/Modal";
@@ -66,7 +66,9 @@ export async function getStaticProps({ params, preview = null, previewData = {} 
 }
 
 export async function getStaticPaths() {
-  const pages = await Client().query(Prismic.Predicates.at('document.type', 'general_content_page'));
+  const pages = await Client().query(
+    prismic.predicate.at("document.type", "general_content_page"),
+  );
   const paths = pages?.results?.map(page => ({ params: { uid: page.uid } }));
 
   return {

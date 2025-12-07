@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import App from 'next/app';
-import Prismic from '@prismicio/client';
+import * as prismic from "@prismicio/client";
 import { Client } from 'util/prismicHelpers';
 import { Helmet } from 'react-helmet';
 import { useRouter } from 'next/router';
@@ -136,9 +136,7 @@ MyApp.getInitialProps = async (ctx) => {
     'YIg9ABAAACMAMUpk',
   ];
 
-  const pageData = await client.query(
-    Prismic.Predicates.in('document.id', ids),
-  );
+  const pageData = await client.query(prismic.predicate.in("document.id", ids));
 
   return {
     ...appProps,
