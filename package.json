@@ -19,7 +19,7 @@
     "lint-staged"
   ],
   "lint-staged": {
-    "src/**/*!{.config||.spec}.js": [
+    "src/**/*!.config||.spec.js": [
       "eslint --fix",
       "stylelint --fix"
     ]
