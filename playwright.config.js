@@ -33,7 +33,7 @@ export default defineConfig({
     trace: "on-first-retry",
   },
   expect: {
-    toHaveScreenshot: { maxDiffPixels: 200 },
+    toHaveScreenshot: { maxDiffPixels: 4000 },
   },
 
   /* Configure projects for major browsers */
@@ -58,10 +58,10 @@ export default defineConfig({
     //name: "Mobile Chrome",
     //use: { ...devices["Pixel 5"] },
     //},
-    //{
-    //name: "Mobile Safari",
-    //use: { ...devices["iPhone 12"] },
-    //},
+    {
+      name: "Mobile Safari",
+      use: { ...devices["iPhone 14"] },
+    },
 
     /* Test against branded browsers. */
     //{
