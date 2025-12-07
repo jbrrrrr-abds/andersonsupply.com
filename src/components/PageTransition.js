@@ -106,7 +106,6 @@ const SecondaryWrapper = styled.div`
   z-index: 0;
   background: var(--white);
 `;
-
 const PageTransition = ({ route, children, routingPageOffset }) => {
   const [transitionState, setTransitionState] = useState();
 
@@ -120,18 +119,29 @@ const PageTransition = ({ route, children, routingPageOffset }) => {
     ScrollTrigger.refresh(true);
   };
 
-  const nodeRef = React.useRef(null);
+  const nodeRefs = useRef({});
+  // Create or retrieve a ref for this specific route
+  if (!nodeRefs.current[route]) {
+    nodeRefs.current[route] = React.createRef();
+  }
 
   return (
-    <TransitionGroup className={transitionState ? "transitioning" : ""}>
+    <TransitionGroup
+      className={transitionState ? "transitioning" : ""}
+      component={null}
+    >
       <CSSTransition
         timeout={duration}
         classNames="page"
         key={route}
         onEnter={playTransition}
         onExited={stopTransition}
+        nodeRef={nodeRefs.current[route]}
       >
-        <MainWrapper routingPageOffset={routingPageOffset}>
+        <MainWrapper
+          routingPageOffset={routingPageOffset}
+          ref={nodeRefs.current[route]}
+        >
           <SecondaryWrapper className="page-transition-inner">
             {children}
           </SecondaryWrapper>
