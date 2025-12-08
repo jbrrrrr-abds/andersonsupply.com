@@ -18,7 +18,7 @@ origin = "config"
 [build]
 publish = "/Users/justinburrow/Sites/anderson-bros-master/.next"
 publishOrigin = "ui"
-command = "pnpm build"
+command = "pnpm exec build-netlify"
 commandOrigin = "config"
 
 [build.environment]

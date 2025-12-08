@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next",
     "build": "NODE_OPTIONS=--openssl-legacy-provider next build && npx serve -s out",
+    "build-netlify": "NODE_OPTIONS=--openssl-legacy-provider next build",
     "export": "NODE_OPTIONS=--openssl-legacy-provider yarn build && next export",
     "postexport": "node scripts/getSitemap.js",
     "start": "next start",
