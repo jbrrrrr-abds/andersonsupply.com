@@ -82,7 +82,7 @@ const ServicesSingle = ({ page, marquee }) => {
 export async function getStaticProps({ params, preview = null, previewData = {} }) {
   const { ref } = previewData;
   const client = Client();
-  const page = (await client.getByUID('services_single', params.uid, ref ? { ref } : null)) || {};
+  const page = (await client.getByUID("services_single", params.uid)) || {};
   const marquee = (await client.getSingle('marquee')) || {};
 
   return {
@@ -95,9 +95,9 @@ export async function getStaticProps({ params, preview = null, previewData = {} 
 }
 
 export async function getStaticPaths() {
-  const pages = await Client().query(
-    prismic.predicate.at("document.type", "services_single"),
-  );
+  const pages = await Client().get({
+    predicates: prismic.predicate.at("document.type", "services_single"),
+  });
   const paths = pages?.results?.map(page => ({ params: { uid: page.uid } }));
 
   return {
