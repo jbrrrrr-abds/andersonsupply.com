@@ -46,14 +46,14 @@ const StyledCheck = styled.input`
     position: relative;
     cursor: pointer;
     display: block;
-    color: ${props => props.isDark ? 'var(--white)' : 'var(--brand-black)'};
+    color: ${(props) => (props.isDark ? "var(--white)" : "var(--brand-black)")};
     padding-left: 80px;
     font-size: ${rem(15)};
     text-transform: uppercase;
     z-index: 1;
 
-    ::before,
-    ::after {
+    &::before,
+    &::after {
       content: "";
       position: absolute;
       top: 50%;
@@ -61,15 +61,17 @@ const StyledCheck = styled.input`
       transform: translateY(-50%);
     }
 
-    ::before {
+    &::before {
       background-color: var(--brand-white);
       border: 4px solid var(--brand-black);
       width: 65px;
       height: 65px;
-      transition: background-color .3s ease, border .3s ease;
+      transition:
+        background-color 0.3s ease,
+        border 0.3s ease;
     }
 
-    ::after {
+    &::after {
       top: 0;
       left: 23px;
       width: 16px;
@@ -77,7 +79,7 @@ const StyledCheck = styled.input`
       background: url("/images/svg/check.svg");
       background-position: center;
       background-repeat: no-repeat;
-      transition: opacity .3s ease;
+      transition: opacity 0.3s ease;
       z-index: 1;
       transform: scale(0);
       opacity: 0;
@@ -90,7 +92,7 @@ const StyledCheck = styled.input`
       width: 100%;
       height: 65px;
       border: 4px solid var(--brand-black);
-      transition: border .3s ease;
+      transition: border 0.3s ease;
       transform: translateY(-50%);
     }
   }
@@ -111,7 +113,7 @@ const StyledCheck = styled.input`
       border: 4px solid var(--gold);
     }
 
-    ::after {
+    &::after {
       opacity: 1;
       transform: scale(1);
     }

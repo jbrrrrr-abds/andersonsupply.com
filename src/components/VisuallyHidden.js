@@ -5,8 +5,8 @@ const VisuallyHidden = styled.div`
   position: absolute;
   top: 0;
   left: -999px;
-  visibility: hidden;
   pointer-events: none;
+  clip-path: inset(0 100% 100% 0);
 `;
 
 VisuallyHidden.propTypes = {
