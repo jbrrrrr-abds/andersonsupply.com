@@ -15,6 +15,7 @@
     "prettier": "prettier ./src/**/*",
     "test": "jest && playwright test"
   },
+
   "pre-commit": [
     "lint-staged"
   ],
