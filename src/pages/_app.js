@@ -152,7 +152,7 @@ MyApp.getInitialProps = async (ctx) => {
   ];
 
   const pageData = await client.get({
-    predicates: prismic.predicate.in("document.id", ids),
+    filters: [prismic.filter.in("document.id", ids)],
   });
 
   return {

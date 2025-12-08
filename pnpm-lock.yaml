@@ -15,8 +15,8 @@ importers:
         specifier: 16.0.7
         version: 16.0.7(next@16.0.7(@babel/core@7.28.5)(@playwright/test@1.57.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@prismicio/client':
-        specifier: ^6.9.0
-        version: 6.9.0
+        specifier: ^7.21.0
+        version: 7.21.0
       '@prismicio/helpers':
         specifier: ^2.0.0
         version: 2.3.9
@@ -1326,9 +1326,9 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@prismicio/client@6.9.0':
-    resolution: {integrity: sha512-0vEjrywd65ivCa49WHly/c/DdxK2uEZ4w7Vg2ajrG8n7Q3RxQubO26AtGs0eJ2+jPjAnROI78iNS0f5qMBor5Q==}
-    engines: {node: '>=12.13.0'}
+  '@prismicio/client@7.21.0':
+    resolution: {integrity: sha512-9FWmywGC4nAsgrVk6khRJQ6Qvzb/KwbwsVqfHIM+N/Hxxn+V34u+L/X1XzCxwMdGWF5lvH8lLmmrOLowpO4KVA==}
+    engines: {node: '>=14.15.0'}
 
   '@prismicio/helpers@2.3.9':
     resolution: {integrity: sha512-p7Y1sG83A2YPZvptfAzuZA8xH1bdM2wGRjqSKW9Qa0rAnBq2OfVKRvwl9OMCZML4eLUMxSEUAEWRVSoKpQnJvA==}
@@ -3324,6 +3324,10 @@ packages:
 
   imgix-url-builder@0.0.3:
     resolution: {integrity: sha512-8Oc2Cn4+jF06sEfJcVPlWYfD2F6RjrwIMbk1xEzux8unoB5LsvFc/GL1BQ47HPaeE12ReX2nMUcjUslGYWLxHA==}
+    engines: {node: '>=12.7.0'}
+
+  imgix-url-builder@0.0.6:
+    resolution: {integrity: sha512-lFVbvaE9vMck8qz9j+y6o7vsyc1vZhdqzWu+Wp/nlnOCi9zAErc31QMkZKYUGMNLLzxOO4YIBAUPndTPah8HFg==}
     engines: {node: '>=12.7.0'}
 
   import-fresh@3.3.1:
@@ -6981,10 +6985,9 @@ snapshots:
     dependencies:
       playwright: 1.57.0
 
-  '@prismicio/client@6.9.0':
+  '@prismicio/client@7.21.0':
     dependencies:
-      '@prismicio/helpers': 2.3.9
-      '@prismicio/types': 0.2.9
+      imgix-url-builder: 0.0.6
 
   '@prismicio/helpers@2.3.9':
     dependencies:
@@ -9446,6 +9449,8 @@ snapshots:
   ignore@7.0.5: {}
 
   imgix-url-builder@0.0.3: {}
+
+  imgix-url-builder@0.0.6: {}
 
   import-fresh@3.3.1:
     dependencies:

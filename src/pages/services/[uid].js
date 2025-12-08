@@ -96,7 +96,7 @@ export async function getStaticProps({ params, preview = null, previewData = {} 
 
 export async function getStaticPaths() {
   const pages = await Client().get({
-    predicates: prismic.predicate.at("document.type", "services_single"),
+    predicates: prismic.filter.at("document.type", "services_single"),
   });
   const paths = pages?.results?.map(page => ({ params: { uid: page.uid } }));
 
