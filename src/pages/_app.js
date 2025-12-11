@@ -140,7 +140,7 @@ const MyApp = ({ Component, pageProps, pageData }) => {
   );
 };
 
-MyApp.getInitialProps = async (ctx) => {
+MyApp.getInitialProps = async (ctx, previewData) => {
   const appProps = await App.getInitialProps(ctx);
   const client = createClient({
     req: ctx.ctx?.req,
