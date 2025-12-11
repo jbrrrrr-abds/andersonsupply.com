@@ -1,5 +1,5 @@
 module.exports = {
-  output: "export",
+  //output: "export",
   outputFileTracingRoot: __dirname,
   compiler: {
     styledComponents: true,

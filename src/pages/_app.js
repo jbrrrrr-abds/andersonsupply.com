@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import App from 'next/app';
 import * as prismic from "@prismicio/client";
-import { Client } from 'util/prismicHelpers';
+import { createClient, repositoryName } from "prismicio";
+import { PrismicPreview } from "@prismicio/next/pages";
 import isPropValid from "@emotion/is-prop-valid";
 import { StyleSheetManager } from "styled-components";
 import { Helmet } from "react-helmet";
@@ -91,6 +92,7 @@ const MyApp = ({ Component, pageProps, pageData }) => {
             socialMediaLinks={results[1]?.data?.social_media_links}
           />
         </PageTransition>
+        <PrismicPreview repositoryName={repositoryName} />
         <GlobalStyle />
         <TabFocusOutlineStyles />
 
@@ -138,9 +140,9 @@ const MyApp = ({ Component, pageProps, pageData }) => {
   );
 };
 
-MyApp.getInitialProps = async (ctx) => {
+MyApp.getInitialProps = async (ctx, previewData) => {
   const appProps = await App.getInitialProps(ctx);
-  const client = Client();
+  const client = createClient({ previewData });
 
   const ids = [
     // Header
