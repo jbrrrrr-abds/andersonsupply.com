@@ -108,7 +108,7 @@ const StyledCheck = styled.input`
   }
 
   &:checked + label {
-    ::before {
+    &::before {
       background-color: var(--gold);
       border: 4px solid var(--gold);
     }
