@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Client } from "util/prismicHelpers";
+import { createClient } from "prismicio";
 import Hero from "components/we-got-you/Hero";
 
 const WeGotYou = ({ page }) => {
@@ -34,15 +34,14 @@ const WeGotYou = ({ page }) => {
   );
 };
 
-export async function getStaticProps({ preview = null }) {
-  const client = Client();
+export async function getStaticProps({ preview, previewData }) {
+  const client = createClient({ previewData });
 
   const page = (await client.getSingle("we_got_you")) || {};
 
   return {
     props: {
       page,
-      preview,
     },
   };
 }

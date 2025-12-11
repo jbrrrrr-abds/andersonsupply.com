@@ -1,0 +1,271 @@
+{
+  "id": "home",
+  "json": {
+    "Main": {
+      "page_title": {
+        "type": "Text",
+        "config": {
+          "label": "Page Title"
+        }
+      },
+      "page_description": {
+        "type": "Text",
+        "config": {
+          "label": "Page Description"
+        }
+      },
+      "page_social_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Page Social Image"
+        }
+      },
+      "hero_carousel": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "slide_image": {
+              "type": "Image",
+              "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Slide Image"
+              }
+            },
+            "slide_title": {
+              "type": "Text",
+              "config": {
+                "label": "Slide Title"
+              }
+            },
+            "slide_link_text": {
+              "type": "Text",
+              "config": {
+                "label": "Slide Link Text"
+              }
+            },
+            "slide_link_url": {
+              "type": "Link",
+              "config": {
+                "label": "Slide Link Url",
+                "select": null
+              }
+            }
+          },
+          "label": "Hero Carousel"
+        }
+      },
+      "work_link_text": {
+        "type": "Text",
+        "config": {
+          "label": "Work Link Text",
+          "placeholder": "Our Work"
+        }
+      },
+      "work_link": {
+        "type": "Link",
+        "config": {
+          "label": "Work Link",
+          "select": null
+        }
+      },
+      "work_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Work Image"
+        }
+      },
+      "work_mobile_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Work Mobile Image"
+        }
+      },
+      "services_title": {
+        "type": "Text",
+        "config": {
+          "label": "Services Title"
+        }
+      },
+      "services": {
+        "type": "Link",
+        "config": {
+          "select": "document",
+          "customtypes": ["services_navigation"],
+          "label": "Services"
+        }
+      },
+      "three_column_title": {
+        "type": "Text",
+        "config": {
+          "label": "Three Column Title",
+          "placeholder": "KISS"
+        }
+      },
+      "three_column_grid": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Image"
+              }
+            },
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title"
+              }
+            },
+            "description": {
+              "type": "StructuredText",
+              "config": {
+                "multi": "paragraph,strong,em,hyperlink",
+                "allowTargetBlank": true,
+                "label": "Description"
+              }
+            }
+          },
+          "label": "Three Column Grid"
+        }
+      },
+      "three_column_link_text": {
+        "type": "Text",
+        "config": {
+          "label": "Three Column Link Text",
+          "placeholder": "Get Started"
+        }
+      },
+      "three_column_link": {
+        "type": "Link",
+        "config": {
+          "label": "Three Column Link",
+          "select": null
+        }
+      },
+      "testimonials_title": {
+        "type": "Text",
+        "config": {
+          "label": "Testimonials Title",
+          "placeholder": "Testimonials"
+        }
+      },
+      "testimonials": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "testimonial": {
+              "type": "Link",
+              "config": {
+                "select": "document",
+                "customtypes": ["testimonial"],
+                "label": "Testimonial"
+              }
+            }
+          },
+          "label": "Testimonials"
+        }
+      },
+      "video": {
+        "type": "Link",
+        "config": {
+          "select": "media",
+          "label": "Video"
+        }
+      },
+      "video_id": {
+        "type": "Text",
+        "config": {
+          "label": "Video Id",
+          "placeholder": "WGaICSbCr1c"
+        }
+      },
+      "video_title": {
+        "type": "Text",
+        "config": {
+          "label": "Video Title",
+          "placeholder": "Our Vision"
+        }
+      },
+      "video_description": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,strong,em,hyperlink",
+          "label": "Video Description"
+        }
+      },
+      "video_top_text": {
+        "type": "Text",
+        "config": {
+          "label": "Video Top Text",
+          "placeholder": "The"
+        }
+      },
+      "video_bottom_text": {
+        "type": "Text",
+        "config": {
+          "label": "Video Bottom Text",
+          "placeholder": "Story"
+        }
+      },
+      "two_column_title": {
+        "type": "Text",
+        "config": {
+          "label": "Two Column Title",
+          "placeholder": "Teamwork"
+        }
+      },
+      "two_column_description": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,strong,em,hyperlink",
+          "label": "Two Column Description"
+        }
+      },
+      "two_column_link_text": {
+        "type": "Text",
+        "config": {
+          "label": "Two Column Link Text",
+          "placeholder": "About Us"
+        }
+      },
+      "two_column_link": {
+        "type": "Link",
+        "config": {
+          "allowTargetBlank": true,
+          "label": "Two Column Link",
+          "select": null
+        }
+      },
+      "two_column_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Two Column Image"
+        }
+      },
+      "marquee": {
+        "type": "Link",
+        "config": {
+          "select": "document",
+          "customtypes": ["marquee"],
+          "label": "Marquee"
+        }
+      }
+    }
+  },
+  "label": "Home",
+  "repeatable": false,
+  "status": true,
+  "format": "custom"
+}

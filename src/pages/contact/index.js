@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Client } from 'util/prismicHelpers';
+import { createClient } from "prismicio";
 import Hero from 'components/contact/Hero';
 import Form from 'components/contact/Form';
 import BlackLogoGrid from 'components/BlackLogoGrid';
@@ -55,21 +55,16 @@ const Index = ({ page }) => {
   );
 };
 
-export async function getStaticProps({ preview = null }) {
+export async function getStaticProps({ preview, previewData }) {
+  const fetchLinks = ["logo_grid.logo_grid_title", "logo_grid.logos"];
 
-  const fetchLinks = [
-    'logo_grid.logo_grid_title',
-    'logo_grid.logos',
-  ];
+  const client = createClient({ previewData });
 
-  const client = Client();
-
-  const page = (await client.getSingle('contact', { fetchLinks })) || {};
+  const page = (await client.getSingle("contact", { fetchLinks })) || {};
 
   return {
     props: {
       page,
-      preview,
     },
   };
 }

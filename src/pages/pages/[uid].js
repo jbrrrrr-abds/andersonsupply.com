@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Client } from 'util/prismicHelpers';
+import { createClient } from "prismicio";
 import * as prismic from "@prismicio/client";
 import * as prismicH from "@prismicio/helpers";
 import Hero from "components/general-page/Hero";
@@ -50,16 +50,14 @@ const ContentPageSingle = ({ page, marquee }) => {
   );
 };
 
-export async function getStaticProps({ params, preview = null, previewData = {} }) {
-  const { ref } = previewData;
-  const client = Client();
+export async function getStaticProps({ params, preview, previewData }) {
+  const client = createClient({ previewData });
   const page =
     (await client.getByUID("general_content_page", params.uid)) || {};
-  const marquee = (await client.getSingle('marquee')) || {};
+  const marquee = (await client.getSingle("marquee")) || {};
 
   return {
     props: {
-      preview,
       page,
       marquee,
     },
@@ -67,10 +65,10 @@ export async function getStaticProps({ params, preview = null, previewData = {} 
 }
 
 export async function getStaticPaths() {
-  const pages = await Client().get({
+  const pages = await createClient().get({
     predicates: prismic.filter.at("document.type", "general_content_page"),
   });
-  const paths = pages?.results?.map(page => ({ params: { uid: page.uid } }));
+  const paths = pages?.results?.map((page) => ({ params: { uid: page.uid } }));
 
   return {
     paths,

@@ -140,9 +140,12 @@ const MyApp = ({ Component, pageProps, pageData }) => {
   );
 };
 
-MyApp.getInitialProps = async (ctx, previewData) => {
+MyApp.getInitialProps = async (ctx) => {
   const appProps = await App.getInitialProps(ctx);
-  const client = createClient({ previewData });
+  const client = createClient({
+    req: ctx.ctx?.req,
+    previewData: ctx.ctx?.previewData,
+  });
 
   const ids = [
     // Header

@@ -1,0 +1,80 @@
+{
+  "id": "confirmed",
+  "json": {
+    "Main": {
+      "page_title": {
+        "type": "Text",
+        "config": {
+          "label": "Page Title",
+          "placeholder": "Confirmed"
+        }
+      },
+      "page_description": {
+        "type": "Text",
+        "config": {
+          "label": "Page Description"
+        }
+      },
+      "page_social_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Page Social Image"
+        }
+      },
+      "hero_headline": {
+        "type": "Text",
+        "config": {
+          "label": "Hero Headline",
+          "placeholder": "Welcome to the Broship"
+        }
+      },
+      "hero_description": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,strong,em,hyperlink",
+          "label": "Hero Description"
+        }
+      },
+      "hero_link": {
+        "type": "Link",
+        "config": {
+          "label": "Hero Link",
+          "select": null
+        }
+      },
+      "hero_link_text": {
+        "type": "Text",
+        "config": {
+          "label": "Hero Link Text"
+        }
+      },
+      "hero_secondary_link": {
+        "type": "Link",
+        "config": {
+          "label": "Hero Secondary Link",
+          "select": null
+        }
+      },
+      "hero_secondary_link_text": {
+        "type": "Text",
+        "config": {
+          "label": "Hero Secondary Link Text"
+        }
+      },
+      "hero_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Hero Image"
+        }
+      }
+    }
+  },
+  "label": "Confirmed",
+  "repeatable": false,
+  "status": true,
+  "format": "custom"
+}

@@ -1,0 +1,83 @@
+{
+  "id": "site_header",
+  "json": {
+    "Main": {
+      "all_services_link": {
+        "type": "Link",
+        "config": {
+          "label": "All Services Link",
+          "select": null
+        }
+      },
+      "all_services_link_text": {
+        "type": "Text",
+        "config": {
+          "label": "All Services Link Text",
+          "placeholder": "All"
+        }
+      },
+      "navigation_items": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "select": null
+              }
+            },
+            "link_text": {
+              "type": "Text",
+              "config": {
+                "label": "Link Text",
+                "placeholder": "Page Name"
+              }
+            }
+          },
+          "label": "Navigation Items"
+        }
+      },
+      "secondary_navigation_items": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "select": null,
+                "allowTargetBlank": true
+              }
+            },
+            "link_text": {
+              "type": "Text",
+              "config": {
+                "label": "Link Text"
+              }
+            }
+          },
+          "label": "Secondary Navigation Items"
+        }
+      },
+      "navigation_button_link": {
+        "type": "Link",
+        "config": {
+          "label": "Navigation Button Link",
+          "select": null
+        }
+      },
+      "navigation_button_link_text": {
+        "type": "Text",
+        "config": {
+          "label": "Navigation Button Link Text",
+          "placeholder": "Hire Us"
+        }
+      }
+    }
+  },
+  "label": "Site Header",
+  "repeatable": false,
+  "status": true,
+  "format": "custom"
+}
