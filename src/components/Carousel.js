@@ -217,10 +217,17 @@ Carousel.Dots.propTypes = {
   className: PropTypes.string,
 };
 
-Carousel.Button = ({ slideCount, currentIndex, handleClick, action, isLeft, color }) => {
+Carousel.Button = ({
+  slideCount,
+  currentIndex,
+  handleClick,
+  actionName,
+  isLeft,
+  color,
+}) => {
   Carousel.Button.displayName = "CarouselButton";
   let nextIndex = null;
-  const interval = action === 'next' ? 1 : -1;
+  const interval = actionName === "next" ? 1 : -1;
 
   if (currentIndex + interval >= slideCount) {
     nextIndex = 0;
@@ -232,9 +239,11 @@ Carousel.Button = ({ slideCount, currentIndex, handleClick, action, isLeft, colo
 
   return (
     <SlideArrowButton
-      aria-label={`Go to ${action} slide`}
-      onClick={() => { handleClick(nextIndex); }}
-      action={action}
+      aria-label={`Go to ${actionName} slide`}
+      onClick={() => {
+        handleClick(nextIndex);
+      }}
+      actionName={actionName}
       isLeft={isLeft}
       color={color}
     >
