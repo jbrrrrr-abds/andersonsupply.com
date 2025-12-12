@@ -41,7 +41,7 @@ test.describe("match site page screenshots", () => {
   });
 
   test("screen-printing", async ({ page }) => {
-    await page.goto("/screen-printing");
+    await page.goto("services/screen-printing");
     await expect(page).toHaveScreenshot({
       animations: "disabled",
       fullPage: true,
@@ -50,7 +50,7 @@ test.describe("match site page screenshots", () => {
   });
 
   test("headwear", async ({ page }) => {
-    await page.goto("/headwear");
+    await page.goto("services/headwear");
     await expect(page).toHaveScreenshot({
       animations: "disabled",
       fullPage: true,
@@ -59,7 +59,7 @@ test.describe("match site page screenshots", () => {
   });
 
   test("accessories", async ({ page }) => {
-    await page.goto("/accessories");
+    await page.goto("services/accessories");
     await expect(page).toHaveScreenshot({
       animations: "disabled",
       fullPage: true,
@@ -68,7 +68,7 @@ test.describe("match site page screenshots", () => {
   });
 
   test("cut-and-sew", async ({ page }) => {
-    await page.goto("/cut-and-sew");
+    await page.goto("services/cut-and-sew");
     await expect(page).toHaveScreenshot({
       animations: "disabled",
       fullPage: true,
