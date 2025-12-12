@@ -24,9 +24,9 @@ const netlifySubmit = async (values, fileInputNames = []) => {
   }
 
   return axios({
-    method: 'post',
-    url: '/contact',
-    headers: { 'Content-Type': 'multipart/form-data' },
+    method: "post",
+    url: "/__forms/contact.html",
+    headers: { "Content-Type": "multipart/form-data" },
     data: formData,
   });
 };
