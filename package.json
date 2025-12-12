@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider next build && npx serve -s out",
-    "build-netlify": "NODE_OPTIONS=--openssl-legacy-provider next build",
+    "build-local": "NODE_OPTIONS=--openssl-legacy-provider next build && npx serve -s out",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider next build && next export",
     "export": "NODE_OPTIONS=--openssl-legacy-provider yarn build && next export",
     "postexport": "node scripts/getSitemap.js",
     "start": "next start",
@@ -86,6 +86,7 @@
     "jest-environment-jsdom": "^30.2.0",
     "jsdom": "^27.2.0",
     "lint-staged": "^16.2.7",
+    "netlify": "^23.12.3",
     "playwright": "^1.57.0",
     "postcss-styled-syntax": "^0.7.1",
     "pre-commit": "^1.2.2",
