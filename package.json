@@ -4,8 +4,8 @@
   "scripts": {
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next",
     "build-local": "NODE_OPTIONS=--openssl-legacy-provider next build && npx serve -s out",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider next build && next export",
-    "export": "NODE_OPTIONS=--openssl-legacy-provider yarn build && next export",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
+    "export": "NODE_OPTIONS=--openssl-legacy-provider yarn build",
     "postexport": "node scripts/getSitemap.js",
     "start": "next start",
     "lint": "eslint .",
