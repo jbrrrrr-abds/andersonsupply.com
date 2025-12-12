@@ -1,8 +1,6 @@
 module.exports = {
   //output: "export",
   outputFileTracingRoot: __dirname,
-  output: "export",
-  outputFileTracingRoot: __dirname,
   images: {
     unoptimized: true,
   },
