@@ -15,7 +15,7 @@ import TextBlock from './TextBlock';
 
 const QuoteGrid = styled(Grid)`
   grid-template-columns: 1.2fr 1fr;
-  grid-gap: 108px;
+  gap: 108px;
 
   ${props => !props.description && 'align-items: center;'};
 

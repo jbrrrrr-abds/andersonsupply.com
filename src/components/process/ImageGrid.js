@@ -24,7 +24,7 @@ const StyledSection = styled(Section)`
 `;
 
 const StyledGrid = styled(Grid)`
-  grid-gap: 0;
+  gap: 0;
   max-width: var(--customer-container-width);
   margin: 74px auto auto;
 
@@ -39,7 +39,7 @@ const StyledGrid = styled(Grid)`
 
 const TwoColumnGrid = styled(Grid)`
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 0;
+  gap: 0;
 `;
 
 const Illustration = styled.div`

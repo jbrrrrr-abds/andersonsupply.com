@@ -19,7 +19,7 @@ const StyledPlayButton = styled(UnstyledButton)`
     left: 50%;
     width: 12px;
     height: 14px;
-    fill: currentColor;
+    fill: currentcolor;
     transform: translate(-50%, -50%);
   }
 

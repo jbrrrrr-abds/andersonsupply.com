@@ -16,18 +16,21 @@ const StyledSection = styled(Section)`
   .hero {
     width: 100%;
     max-width: 1080px;
-    margin: 0 auto 5rem auto;
+    margin: 0 auto 5rem;
     text-align: center;
     padding: 0 30px;
+
     img {
       max-width: 316px;
-      margin: 10px auto 40px auto;
-      @media screen and (max-width: 1080px) {
+      margin: 10px auto 40px;
+
+      @media screen and (width <= 1080px) {
         max-width: 70vw;
-        margin: 2vw auto 4vw auto;
+        margin: 2vw auto 4vw;
       }
     }
-    @media screen and (max-width: 1080px) {
+
+    @media screen and (width <= 1080px) {
       padding: 0 5vw;
     }
   }
@@ -38,7 +41,8 @@ const StyledSection = styled(Section)`
     line-height: 1.2;
     font-weight: 900;
     margin-bottom: 20px;
-    @media screen and (max-width: 1080px) {
+
+    @media screen and (width <= 1080px) {
       font-size: 12vw;
     }
   }
@@ -47,7 +51,8 @@ const StyledSection = styled(Section)`
     font-family: var(--tertiary-font);
     font-size: 2.4rem;
     line-height: 1.2;
-    @media screen and (max-width: 1080px) {
+
+    @media screen and (width <= 1080px) {
       font-size: 8vw;
     }
   }
@@ -57,7 +62,8 @@ const StyledSection = styled(Section)`
     font-size: 4rem;
     line-height: 1.2;
     margin-bottom: 20px;
-    @media screen and (max-width: 1080px) {
+
+    @media screen and (width <= 1080px) {
       font-size: 12vw;
       margin-bottom: 3vw;
     }
@@ -68,7 +74,8 @@ const StyledSection = styled(Section)`
     font-size: 2.4rem;
     line-height: 1.2;
     padding-bottom: 200px;
-    @media screen and (max-width: 800px) {
+
+    @media screen and (width <= 800px) {
       font-size: 8vw;
     }
   }

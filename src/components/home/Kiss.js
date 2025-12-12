@@ -31,7 +31,7 @@ const StyledSection = styled(Section)`
 
 const StyledGrid = styled(Grid)`
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 165px;
+  gap: 165px;
 
   li {
     visibility: hidden;

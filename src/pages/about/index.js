@@ -1,14 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Client } from 'util/prismicHelpers';
-import Video from 'components/about-us/Video';
-import CarouselBlock from 'components/about-us/CarouselBlock';
-import TwoColumn from 'components/about-us/TwoColumn';
-import TeamGrid from 'components/about-us/TeamGrid';
-import TheDuke from 'components/about-us/TheDuke';
-import Modal from 'components/Modal';
-import { useModal } from 'components/Modal/GullsModal';
-import YouTubeModal from 'components/Modal/YouTubeModal';
+import { createClient } from "prismicio";
+import Video from "components/about-us/Video";
+import CarouselBlock from "components/about-us/CarouselBlock";
+import TwoColumn from "components/about-us/TwoColumn";
+import TeamGrid from "components/about-us/TeamGrid";
+import TheDuke from "components/about-us/TheDuke";
+import Modal from "components/Modal";
+import { useModal } from "components/Modal/GullsModal";
+import YouTubeModal from "components/Modal/YouTubeModal";
 
 const Index = ({ page }) => {
   const { modalOpen } = useModal();
@@ -22,13 +22,19 @@ const Index = ({ page }) => {
       <Helmet
         title={data?.page_title}
         meta={[
-          { name: 'description', content: data?.page_description },
-          { property: 'og:title', content: data?.page_title },
-          { property: 'og:description', content: data?.page_description },
-          { property: 'og:image', content: `${data?.page_social_image?.url}&w=1200&h=630&fit=crop&q=85&f=center` },
-          { name: 'twitter:image', content: `${data?.page_social_image?.url}&w=1200&h=630&fit=crop&q=85&f=center` },
-          { name: 'twitter:title', content: data?.page_title },
-          { name: 'twitter:description', content: data?.page_description },
+          { name: "description", content: data?.page_description },
+          { property: "og:title", content: data?.page_title },
+          { property: "og:description", content: data?.page_description },
+          {
+            property: "og:image",
+            content: `${data?.page_social_image?.url}&w=1200&h=630&fit=crop&q=85&f=center`,
+          },
+          {
+            name: "twitter:image",
+            content: `${data?.page_social_image?.url}&w=1200&h=630&fit=crop&q=85&f=center`,
+          },
+          { name: "twitter:title", content: data?.page_title },
+          { name: "twitter:description", content: data?.page_description },
         ]}
       />
       <main>
@@ -73,16 +79,14 @@ const Index = ({ page }) => {
   );
 };
 
-export async function getStaticProps({ preview = null }) {
+export async function getStaticProps({ preview, previewData }) {
+  const client = createClient({ previewData });
 
-  const client = Client();
-
-  const page = (await client.getSingle('about')) || {};
+  const page = (await client.getSingle("about")) || {};
 
   return {
     props: {
       page,
-      preview,
     },
   };
 }

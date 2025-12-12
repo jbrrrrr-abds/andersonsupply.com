@@ -1,17 +1,17 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Client } from 'util/prismicHelpers';
-import HeroCarousel from 'components/home/HeroCarousel';
-import Work from 'components/home/Work';
-import Services from 'components/home/Services';
-import Kiss from 'components/home/Kiss';
-import TestimonialsCarousel from 'components/TestimonialsCarousel';
-import Video from 'components/home/Video';
-import Teamwork from 'components/home/TeamWork';
-import MarqueeBlock from 'components/MarqueeBlock';
-import Modal from 'components/Modal';
-import { useModal } from 'components/Modal/GullsModal';
-import YouTubeModal from 'components/Modal/YouTubeModal';
+import { createClient } from "prismicio";
+import HeroCarousel from "components/home/HeroCarousel";
+import Work from "components/home/Work";
+import Services from "components/home/Services";
+import Kiss from "components/home/Kiss";
+import TestimonialsCarousel from "components/TestimonialsCarousel";
+import Video from "components/home/Video";
+import Teamwork from "components/home/TeamWork";
+import MarqueeBlock from "components/MarqueeBlock";
+import Modal from "components/Modal";
+import { useModal } from "components/Modal/GullsModal";
+import YouTubeModal from "components/Modal/YouTubeModal";
 
 const Index = ({ page }) => {
   const { modalOpen } = useModal();
@@ -24,19 +24,23 @@ const Index = ({ page }) => {
     <>
       <Helmet
         meta={[
-          { name: 'description', content: data?.page_description },
-          { property: 'og:title', content: data?.page_title },
-          { property: 'og:description', content: data?.page_description },
-          { property: 'og:image', content: `${data?.page_social_image?.url}&w=1200&h=630&fit=crop&q=85&f=center` },
-          { name: 'twitter:image', content: `${data?.page_social_image?.url}&w=1200&h=630&fit=crop&q=85&f=center` },
-          { name: 'twitter:title', content: data?.page_title },
-          { name: 'twitter:description', content: data?.page_description },
+          { name: "description", content: data?.page_description },
+          { property: "og:title", content: data?.page_title },
+          { property: "og:description", content: data?.page_description },
+          {
+            property: "og:image",
+            content: `${data?.page_social_image?.url}&w=1200&h=630&fit=crop&q=85&f=center`,
+          },
+          {
+            name: "twitter:image",
+            content: `${data?.page_social_image?.url}&w=1200&h=630&fit=crop&q=85&f=center`,
+          },
+          { name: "twitter:title", content: data?.page_title },
+          { name: "twitter:description", content: data?.page_description },
         ]}
       />
       <main>
-        <HeroCarousel
-          slides={data?.hero_carousel}
-        />
+        <HeroCarousel slides={data?.hero_carousel} />
         <Work
           link={data?.work_link}
           linkText={data?.work_link_text}
@@ -72,10 +76,7 @@ const Index = ({ page }) => {
           linkText={data?.two_column_link_text}
           image={data?.two_column_image}
         />
-        <MarqueeBlock
-          marqueeID={page?.id}
-          content={data?.marquee?.data}
-        />
+        <MarqueeBlock marqueeID={page?.id} content={data?.marquee?.data} />
       </main>
       <Modal>
         <YouTubeModal youTubeID={modalOpen} />
@@ -84,28 +85,26 @@ const Index = ({ page }) => {
   );
 };
 
-export async function getStaticProps({ preview = null }) {
-
+export async function getStaticProps({ preview, previewData }) {
   const fields = [
-    'services_navigation.services',
-    'services.link_url',
-    'testimonial.quote',
-    'testimonial.quotee',
-    'marquee.first_text_content',
-    'marquee.second_text_content',
-    'marquee.third_text_content',
-    'marquee.link',
-    'marquee.link_text',
+    "services_navigation.services",
+    "services.link_url",
+    "testimonial.quote",
+    "testimonial.quotee",
+    "marquee.first_text_content",
+    "marquee.second_text_content",
+    "marquee.third_text_content",
+    "marquee.link",
+    "marquee.link_text",
   ];
 
-  const client = Client();
+  const client = createClient({ previewData });
 
-  const page = (await client.getSingle('home', { fetchLinks: fields })) || {};
+  const page = (await client.getSingle("home", { fetchLinks: fields })) || {};
 
   return {
     props: {
       page,
-      preview,
     },
   };
 }

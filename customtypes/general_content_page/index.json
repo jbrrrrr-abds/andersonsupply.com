@@ -1,0 +1,41 @@
+{
+  "id": "general_content_page",
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "SEO Page Slug",
+          "placeholder": "Customize the url slug for this page - i.e. \"new-page\""
+        }
+      },
+      "page_title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": "Page Title (shown as main heading and in search results)"
+        }
+      },
+      "page_description": {
+        "type": "Text",
+        "config": {
+          "label": "Page Description",
+          "placeholder": "Description of the page for search engine results"
+        }
+      },
+      "page_content": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+          "allowTargetBlank": true,
+          "label": "Content",
+          "placeholder": "Customize the text content for this page"
+        }
+      }
+    }
+  },
+  "label": "General Content Page",
+  "repeatable": true,
+  "status": true,
+  "format": "custom"
+}

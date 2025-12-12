@@ -1,0 +1,110 @@
+{
+  "id": "site_footer",
+  "json": {
+    "Main": {
+      "address": {
+        "type": "Text",
+        "config": {
+          "label": "Address"
+        }
+      },
+      "phone_number_link": {
+        "type": "Text",
+        "config": {
+          "label": "Phone Number Link",
+          "placeholder": "5627352320"
+        }
+      },
+      "phone_number_text": {
+        "type": "Text",
+        "config": {
+          "label": "Phone Number Text",
+          "placeholder": "(562) 735-2320"
+        }
+      },
+      "email_address": {
+        "type": "Text",
+        "config": {
+          "label": "Email Address",
+          "placeholder": "info@abds.com"
+        }
+      },
+      "newsletter_title": {
+        "type": "Text",
+        "config": {
+          "label": "Newsletter Title",
+          "placeholder": "Sign Up for Our Newsletter"
+        }
+      },
+      "jumbo_text": {
+        "type": "Text",
+        "config": {
+          "label": "Jumbo Text",
+          "placeholder": "Some More Info, AKA The Footer"
+        }
+      },
+      "graphic": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Graphic"
+        }
+      },
+      "site_navigation_items": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "select": null
+              }
+            },
+            "link_text": {
+              "type": "Text",
+              "config": {
+                "label": "Link Text"
+              }
+            }
+          },
+          "label": "Site Navigation Items"
+        }
+      },
+      "social_media_links": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "icon": {
+              "type": "Image",
+              "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Icon"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "select": null
+              }
+            },
+            "link_text": {
+              "type": "Text",
+              "config": {
+                "label": "Link Text"
+              }
+            }
+          },
+          "label": "Social Media Links"
+        }
+      }
+    }
+  },
+  "label": "Site Footer",
+  "repeatable": false,
+  "status": true,
+  "format": "custom"
+}

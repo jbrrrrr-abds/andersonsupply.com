@@ -22,7 +22,7 @@ const StyledSection = styled(Section)`
 `;
 
 const StyledGrid = styled(Grid)`
-  grid-gap: 0;
+  gap: 0;
 
   ${screen.above(bp.tablet, `
     grid-template-columns: 1.4fr 1fr;
@@ -31,7 +31,7 @@ const StyledGrid = styled(Grid)`
 
 const TwoColumnGrid = styled(Grid)`
   grid-template-columns: 1fr 1fr;
-  grid-gap: 0;
+  gap: 0;
 `;
 
 const SpanTwo = styled(LazyImg)`

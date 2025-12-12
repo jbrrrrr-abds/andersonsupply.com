@@ -16,7 +16,7 @@ const StyledSection = styled.section`
 `;
 
 const StyledGrid = styled(Grid)`
-  grid-gap: 0;
+  gap: 0;
 
   ${screen.above(bp.laptopSm, `
     grid-template-columns: repeat(2, 1fr);

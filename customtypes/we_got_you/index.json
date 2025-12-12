@@ -1,0 +1,49 @@
+{
+  "id": "we_got_you",
+  "json": {
+    "Main": {
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading1",
+          "label": "title"
+        }
+      },
+      "subtitle": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading2",
+          "label": "subtitle"
+        }
+      },
+      "main_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "main image"
+        }
+      },
+      "text_line_1": {
+        "type": "StructuredText",
+        "config": {
+          "single": "strong",
+          "allowTargetBlank": true,
+          "label": "text line 1"
+        }
+      },
+      "text_line_2": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "strong",
+          "allowTargetBlank": true,
+          "label": "text_line_2"
+        }
+      }
+    }
+  },
+  "label": "We Got You",
+  "repeatable": false,
+  "status": true,
+  "format": "custom"
+}

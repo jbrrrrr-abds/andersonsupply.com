@@ -1,15 +1,12 @@
-import Prismic from '@prismicio/client';
-import {
-  apiEndpoint,
-  accessToken,
-} from '../../prismic';
+import * as prismic from "@prismicio/client";
+import { apiEndpoint, accessToken } from "../../prismic";
 
 // -- Link resolution rules
 // Manages the url links to internal Prismic documents
 export const linkResolver = (link) => {
-  if (link.link_type === 'Document') {
+  if (link.link_type === "Document") {
     switch (link.type) {
-      case 'services_single':
+      case "services_single":
         return `/services/${link.uid}`;
       default:
         return `/${link.type}`;
@@ -21,7 +18,9 @@ export const linkResolver = (link) => {
 const createClientOptions = (req = null, prismicAccessToken = null) => {
   const reqOption = req ? { req } : {};
 
-  const accessTokenOption = prismicAccessToken ? { accessToken: prismicAccessToken } : {};
+  const accessTokenOption = prismicAccessToken
+    ? { accessToken: prismicAccessToken }
+    : {};
 
   return {
     ...reqOption,
@@ -30,8 +29,7 @@ const createClientOptions = (req = null, prismicAccessToken = null) => {
 };
 
 // Client method to query documents from the Prismic repo
-export const Client = (req = null) => (
-  Prismic.client(apiEndpoint, createClientOptions(req, accessToken))
-);
+export const Client = (req = null) =>
+  prismic.createClient(apiEndpoint, createClientOptions(req, accessToken));
 
 export default Client;

@@ -49,6 +49,7 @@ const FormWrapper = styled.section`
 
 const StyledForm = styled.form`
   --gap: 36px;
+
   position: relative;
   text-align: center;
 
@@ -87,7 +88,7 @@ const InfoFieldset = styled(Fieldset)`
 `;
 
 const DesignGrid = styled(Grid)`
-  grid-column-gap: var(--gap);
+  column-gap: var(--gap);
 
   ${screen.above(bp.laptopSm, `
     grid-template-columns: repeat(3, 1fr);
@@ -100,7 +101,7 @@ const DesignGrid = styled(Grid)`
 
 const CategoryGrid = styled(Grid)`
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
+  gap: 20px;
 
   ${screen.below(bp.laptop, `
     grid-template-columns: repeat(3, 1fr);
@@ -125,7 +126,7 @@ const CategoryWrap = styled.div`
     z-index: 1;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(28, 28, 30, 0) 70%, rgba(10, 10, 11, 0) 70%, #0a0a0b 100%);
+    background: linear-gradient(180deg, rgb(28 28 30 / 0%) 70%, rgb(10 10 11 / 0%) 70%, #0a0a0b 100%);
     content: "";
   }
 `;
@@ -249,6 +250,7 @@ const FaqLink = styled(InlineLink)`
 
 const RangeSection = styled(Section)`
   --bottom-spacing: 212px;
+
   position: relative;
   padding: var(--spacing) 0 var(--bottom-spacing);
   overflow: hidden;
@@ -313,7 +315,7 @@ const KnobWrapper = styled.div`
 
 const RangeGrid = styled(Grid)`
   grid-template-columns: repeat(2, 80px);
-  grid-gap: 280px;
+  gap: 280px;
 
   ${screen.below(bp.desktopSm, `
     grid-gap: 210px;
@@ -473,6 +475,7 @@ const RangeMessage = styled.div`
 
 const RangeSpeaker = styled.div`
   --speaker-position: 0;
+
   position: absolute;
   bottom: calc((var(--bottom-spacing) * -1) - 30px);
   ${props => props.alignedLeft ? 'left: var(--speaker-position)' : 'right: var(--speaker-position)'};
@@ -503,6 +506,7 @@ const RangeValue = styled.span`
 const RangeJumboValue = styled.div`
   --left: -308px;
   --right: -352px;
+
   position: absolute;
   top: 50%;
   ${props => props.alignedLeft ? 'left: var(--left)' : 'right: var(--right)'};
@@ -550,7 +554,7 @@ const RangeJumboValue = styled.div`
 `;
 
 const RadioGrid = styled(Grid)`
-  grid-gap: var(--gap);
+  gap: var(--gap);
 
   ${screen.above(bp.laptopSm, `
     grid-template-columns: repeat(2, 1fr);
@@ -1435,7 +1439,7 @@ const Form = ({
             null
           }
 
-          {faqLink ?
+          {faqLink.href ?
             <FaqLink
               href={linkResolver(faqLink)}
             >

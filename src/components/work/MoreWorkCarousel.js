@@ -57,6 +57,7 @@ const Scroller = styled.div`
 
 const Slide = styled.div`
   --slide-padding: 30px;
+
   min-width: 27.4%;
   width: 27.4%;
   opacity: 1;

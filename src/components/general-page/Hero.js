@@ -11,7 +11,7 @@ import TextBlock from '../TextBlock';
 const StyledSection = styled(Section)`
   position: relative;
   z-index: 1;
-  padding: 320px 0 100px 0;
+  padding: 320px 0 100px;
   color: var(--brand-white);
 
   h1 {

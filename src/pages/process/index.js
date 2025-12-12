@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Client } from 'util/prismicHelpers';
+import { createClient } from "prismicio";
 import Hero from 'components/process/Hero';
 import Intro from 'components/process/Intro';
 import Steps from 'components/process/Steps';
@@ -86,16 +86,14 @@ const Index = ({ page }) => {
   );
 };
 
-export async function getStaticProps({ preview = null }) {
+export async function getStaticProps({ preview, previewData }) {
+  const client = createClient({ previewData });
 
-  const client = Client();
-
-  const page = (await client.getSingle('process')) || {};
+  const page = (await client.getSingle("process")) || {};
 
   return {
     props: {
       page,
-      preview,
     },
   };
 }

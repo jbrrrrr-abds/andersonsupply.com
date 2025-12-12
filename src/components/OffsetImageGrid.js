@@ -5,7 +5,7 @@ import LazyImg from './LazyImg';
 
 const ImageGrid = styled(Grid)`
   grid-template-columns: ${props => props.smallImageLeft ? '1fr 2.5fr' : '2.5fr 1fr'};
-  grid-gap: 30px;
+  gap: 30px;
 `;
 
 const SmallImage = styled(LazyImg)`

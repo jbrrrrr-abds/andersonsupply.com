@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
-import styled, { keyframes } from 'styled-components';
-import PropTypes from 'prop-types';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import React, { useState, useRef } from "react";
+import styled, { keyframes } from "styled-components";
+import PropTypes from "prop-types";
+import {
+  TransitionGroup,
+  CSSTransition,
+  Transition,
+} from "react-transition-group";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 const duration = 1000;
 
@@ -65,30 +69,34 @@ const MainWrapper = styled.div`
 
   &.page-enter-active,
   &.page-exit-active {
-
     .page-transition-inner {
       height: 100vh;
       overflow: hidden;
-      box-shadow: 0 0 0 30px var(--light-gray), 0 30px 60px rgba(0, 0, 0, .4);
-      animation: ${duration}ms ${transitionOutZoom} cubic-bezier(.45, 0, .55, 1);
+      box-shadow:
+        0 0 0 30px var(--light-gray),
+        0 30px 60px rgb(0 0 0 / 40%);
+      animation: ${duration}ms ${transitionOutZoom}
+        cubic-bezier(0.45, 0, 0.55, 1);
       animation-fill-mode: both;
     }
   }
 
   &.page-enter-active {
-    animation: ${duration / 2}ms ${transitionInSlide} ${duration / 4}ms cubic-bezier(.37, 0, .63, 1);
+    animation: ${duration / 2}ms ${transitionInSlide} ${duration / 4}ms
+      cubic-bezier(0.37, 0, 0.63, 1);
     animation-fill-mode: both;
   }
 
   &.page-exit-active {
     z-index: 5;
     position: relative;
-    animation: ${duration / 2}ms ${transitionOutSlide} ${duration / 4}ms cubic-bezier(.37, 0, .63, 1);
+    animation: ${duration / 2}ms ${transitionOutSlide} ${duration / 4}ms
+      cubic-bezier(0.37, 0, 0.63, 1);
     animation-fill-mode: both;
 
     main,
     footer {
-      transform: translateY(-${props => props.routingPageOffset}px);
+      transform: translateY(-${(props) => props.routingPageOffset}px);
     }
   }
 `;
@@ -98,13 +106,7 @@ const SecondaryWrapper = styled.div`
   z-index: 0;
   background: var(--white);
 `;
-
-const PageTransition = ({
-  route,
-  children,
-  routingPageOffset,
-}) => {
-
+const PageTransition = ({ route, children, routingPageOffset }) => {
   const [transitionState, setTransitionState] = useState();
 
   const playTransition = () => {
@@ -117,17 +119,28 @@ const PageTransition = ({
     ScrollTrigger.refresh(true);
   };
 
+  const nodeRefs = useRef({});
+  // Create or retrieve a ref for this specific route
+  if (!nodeRefs.current[route]) {
+    nodeRefs.current[route] = React.createRef();
+  }
+
   return (
-    <TransitionGroup className={transitionState ? 'transitioning' : ''}>
+    <TransitionGroup
+      className={transitionState ? "transitioning" : ""}
+      component={null}
+    >
       <CSSTransition
         timeout={duration}
         classNames="page"
         key={route}
         onEnter={playTransition}
         onExited={stopTransition}
+        nodeRef={nodeRefs.current[route]}
       >
         <MainWrapper
           routingPageOffset={routingPageOffset}
+          ref={nodeRefs.current[route]}
         >
           <SecondaryWrapper className="page-transition-inner">
             {children}
@@ -135,7 +148,6 @@ const PageTransition = ({
         </MainWrapper>
       </CSSTransition>
     </TransitionGroup>
-
   );
 };
 

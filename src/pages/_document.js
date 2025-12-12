@@ -80,11 +80,6 @@ export default class MyDocument extends Document {
               gtag('config', 'G-0DZLS1C28M');
             `}
           </Script>
-          <script
-            async
-            defer
-            src="https://static.cdn.prismic.io/prismic.js?new=true&repo=andersonbrothers"
-          ></script>
         </Head>
 
         <body {...this.helmetBodyAttrComponents}>

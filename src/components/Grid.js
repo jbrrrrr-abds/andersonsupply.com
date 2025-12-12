@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Grid = styled.div`
   position: ${props => props.position || 'relative'};
   display: grid;
-  grid-column-gap: 20px;
+  column-gap: 20px;
 `;
 
 Grid.propTypes = {

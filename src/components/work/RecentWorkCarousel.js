@@ -60,7 +60,7 @@ const Wrapper = styled.div`
 
 const OurWorkFooter = styled(Grid)`
   grid-template-columns: 324px 1fr;
-  grid-column-gap: 74px;
+  column-gap: 74px;
   margin-top: 40px;
   opacity: 0;
   transition: opacity 300ms ease-in-out;
