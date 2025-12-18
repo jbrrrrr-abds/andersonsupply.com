@@ -1,25 +1,21 @@
 redirectsOrigin = "inline"
-headers = []
-
-[dev]
-targetPort = 3000.0
-port = 8888.0
+headersOrigin = "inline"
 
 [functions]
 
 [functions."*"]
 
 [[plugins]]
+origin = "default"
 package = "@netlify/plugin-nextjs"
-origin = "config"
 
 [plugins.inputs]
 
 [build]
 publish = "/Users/justinburrow/Sites/anderson-bros-master/.next"
 publishOrigin = "ui"
-command = "pnpm exec build-netlify"
-commandOrigin = "config"
+commandOrigin = "ui"
+command = "pnpm run build"
 
 [build.environment]
 
@@ -34,6 +30,12 @@ commandOrigin = "config"
 [build.processing.js]
 
 [build.services]
+
+[[headers]]
+for = "/_next/static/*"
+
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
 
 [[redirects]]
 from = "/pages/brands"

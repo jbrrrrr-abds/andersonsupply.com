@@ -11,10 +11,11 @@
 				"name": "California"
 			},
 			"timezone": "America/Los_Angeles",
-			"latitude": 33.7835,
-			"longitude": -118.1316
+			"latitude": 33.8041,
+			"longitude": -118.1874,
+			"postalCode": "90806"
 		},
-		"timestamp": 1715314150856
+		"timestamp": 1766103022323
 	},
 	"siteId": "fa8786b3-dae4-461a-bc0f-249fe317443e"
 }
