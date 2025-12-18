@@ -57,6 +57,7 @@
     "react-scrolllock": "^5.0.1",
     "react-transition-group": "^4.4.5",
     "styled-components": "npm:@sanity/styled-components@^6.1.24",
+    "styled-jsx": "^5.1.7",
     "stylelint-config-standard": "^39.0.1",
     "superior-mq": "^1.0.1",
     "use-is-tabbing": "^0.1.1",
