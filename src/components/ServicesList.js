@@ -107,10 +107,10 @@ const ServicesList = ({
   const serviceHover = (i) => {
     if (!list.current) return;
 
-    const imageArray = list.current.querySelectorAll('.service-image');
+    const imageArray = list.current.querySelectorAll(".service-image");
 
     const hoverImg = imageArray[i];
-    const hoverImgImg = hoverImg.querySelector('img');
+    const hoverImgImg = hoverImg.querySelector("img");
     const lastHoverImg = imageArray[lastHover.current];
 
     if (i !== lastHover.current) {
@@ -119,36 +119,44 @@ const ServicesList = ({
       gsap.set(hoverImg, { zIndex: 0 });
 
       if (!isServicesPage) {
-
-        const tl = gsap.timeline({
-          immediateRender: false,
-          onComplete: () => { tl.kill(); },
-        })
-          .fromTo(hoverImg, {
-            scale: 0.01,
-          }, {
-            scale: 1,
-            onUpdate: () => {
-              gsap.set(hoverImgImg, {
-                scale: 1 / gsap.getProperty(hoverImg, 'scale'),
-              });
+        const tl = gsap
+          .timeline({
+            immediateRender: false,
+            onComplete: () => {
+              tl.kill();
             },
           })
-          .fromTo(hoverImg, { borderRadius: '50%' }, { borderRadius: 0 }, '-=.25');
+          .fromTo(
+            hoverImg,
+            {
+              opacity: 0,
+            },
+            {
+              opacity: 1,
+              onUpdate: () => {
+                gsap.set(hoverImgImg, {
+                  //scale: 1 / gsap.getProperty(hoverImg, "scale"),
+                });
+              },
+            },
+          )
+          .fromTo(hoverImg, { top: "-2%" }, { top: 0 }, "-=.6");
       } else {
-        gsap.set([hoverImg, hoverImgImg], { transformOrigin: '50% 100%' });
-        gsap.fromTo(hoverImg,
-          { scaleY: 0.01 },
+        gsap.set([hoverImg, hoverImgImg], { transformOrigin: "0 0" });
+        gsap.fromTo(
+          hoverImg,
+          { opacity: 0 },
           {
-            scaleY: 1,
-            duration: 0.6,
-            ease: 'sine.inOut',
+            opacity: 1,
+            duration: 1,
+            ease: "sine.inOut",
             onUpdate: () => {
               gsap.set(hoverImgImg, {
-                scaleY: 1 / gsap.getProperty(hoverImg, 'scaleY'),
+                //scaleY: 1 / gsap.getProperty(hoverImg, "scaleY"),
               });
             },
-          });
+          },
+        );
       }
 
       lastHover.current = i;
@@ -160,17 +168,28 @@ const ServicesList = ({
   return (
     <div ref={list}>
       <UnstyledList className={className}>
-
         {services.map((item, i) => (
           <StyledListItem key={i} isServicesPage={isServicesPage}>
-            <StyledLink onMouseEnter={() => { serviceHover(i); }} className="service-text" href={linkResolver(item?.link_url)}>
-              <ListText as={OneSixty}>{item?.name}</ListText>
+            <StyledLink
+              onMouseEnter={() => {
+                serviceHover(i);
+              }}
+              className="service-text"
+              href={linkResolver(item?.link_url)}
+            >
+              <ListText as={OneSixty}>
+                {item?.short_name ?? item?.name}
+              </ListText>
             </StyledLink>
           </StyledListItem>
         ))}
       </UnstyledList>
       {services.map((item, index) => (
-        <ImageWrapper className="service-image" isServicesPage={isServicesPage} key={index}>
+        <ImageWrapper
+          className="service-image"
+          isServicesPage={isServicesPage}
+          key={index}
+        >
           {/* Ran into the chaining linting error again here */}
           <img
             src={`${item.image.url}&w=825&h=825&fit=crop&q=85&f=center`}
