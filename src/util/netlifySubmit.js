@@ -1,11 +1,10 @@
-import axios from 'axios';
-
 /**
  * send form values to netlify
  * @param {object} values
  * @param {Array} fileInputNames - names of any inputs that contain files
  * @returns {Promise}
  */
+
 const netlifySubmit = async (values, fileInputNames = []) => {
   const keys = Object.keys(values);
   const formData = new FormData();
@@ -20,15 +19,19 @@ const netlifySubmit = async (values, fileInputNames = []) => {
       });
     } else {
       formData.append(inputName, inputValue);
+      console.log(formData);
     }
   }
 
-  return axios({
-    method: "post",
+  return fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
     url: "/__forms/contact.html",
-    headers: { "Content-Type": "multipart/form-data" },
+    body: new URLSearchParams(formData).toString(),
     data: formData,
-  });
+  })
+    .then(() => console.log("Form successfully submitted"))
+    .catch((error) => alert(error));
 };
 
 export default netlifySubmit;
