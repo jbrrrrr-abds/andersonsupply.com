@@ -39,6 +39,11 @@
   status = 301
 
 [[redirects]]
+  from = "/trusted_brands"
+  to = "/trusted-brands/"
+  status = 301
+
+[[redirects]]
   from = "/pages/services"
   to = "/services/"
   status = 301
