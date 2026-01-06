@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Grid = styled.div`
-  position: ${props => props.position || 'relative'};
+  grid-template-columns: ${((props) => props.colSpan, "1fr" || "12, 1fr")};
   display: grid;
-  column-gap: 20px;
+  gap: var(--spacing);
 `;
 
 Grid.propTypes = {
-  position: PropTypes.oneOf(['static', 'relative', 'absolute']),
+  colSpan: PropTypes.number,
   styles: PropTypes.string,
 };
 

@@ -1,22 +1,24 @@
 /* eslint-disable react/no-array-index-key */
-import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import gsap from 'gsap';
-import screen from 'superior-mq';
-import { rem } from 'polished';
-import { linkResolver } from '../util/prismicHelpers';
-import { bp, hover } from '../styles/helpers';
-import UnstyledList from './UnstyledList';
-import { OneSixty } from './Jumbo';
-import InlineLink from './InlineLink';
+import React, { useCallback, useRef } from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import gsap from "gsap";
+import screen from "superior-mq";
+import { rem } from "polished";
+import { linkResolver } from "../util/prismicHelpers";
+import { bp, hover } from "../styles/helpers";
+import UnstyledList from "./UnstyledList";
+import { OneSixty } from "./Jumbo";
+import InlineLink from "./InlineLink";
 
 const StyledListItem = styled.li`
   max-width: 1220px;
   position: relative;
   z-index: 2;
 
-  ${props => !props.isServicesPage && `
+  ${(props) =>
+    !props.isServicesPage &&
+    `
     border-bottom: 3px solid var(--border-color);
 
     &:first-of-type {
@@ -34,16 +36,19 @@ const StyledLink = styled(InlineLink)`
 `;
 
 const ListText = styled.span`
-  ${screen.below(bp.mobile, `
+  ${screen.below(
+    bp.mobile,
+    `
     font-size: ${rem(50)};
-  `)}
+  `,
+  )}
 `;
 
 const ImageWrapper = styled.div`
   position: absolute;
-  top: ${props => props.isServicesPage ? '290px' : '0'};
-  width: ${props => props.isServicesPage ? '825px' : '100%'};
-  height: ${props => props.isServicesPage ? '1116px' : '100%'};
+  top: ${(props) => (props.isServicesPage ? "290px" : "0")};
+  width: ${(props) => (props.isServicesPage ? "825px" : "100%")};
+  height: ${(props) => (props.isServicesPage ? "1116px" : "100%")};
   overflow: hidden;
   z-index: 0;
 
@@ -54,15 +59,22 @@ const ImageWrapper = styled.div`
     object-fit: cover;
   }
 
-  ${props => props.isServicesPage && `
+  ${(props) =>
+    props.isServicesPage &&
+    `
     right: var(--container-gutter);
 
-    ${screen.above(bp.laptopSm, `
+    ${screen.above(
+      bp.laptopSm,
+      `
       margin-top: -52px;
-    `)}
+    `,
+    )}
   `}
 
-  ${props => !props.isServicesPage && `
+  ${(props) =>
+    !props.isServicesPage &&
+    `
     left: 0;
     width: 100%;
     height: 100%;
@@ -81,96 +93,123 @@ const ImageWrapper = styled.div`
     }
   `}
 
-  ${props => screen.below(bp.desktopSm, `
-    top: ${props.isServicesPage && '218px'};
-    width: ${props.isServicesPage && '618px'};
-    height: ${props.isServicesPage && '837px'};
-  `)}
+  ${(props) =>
+    screen.below(
+      bp.desktopSm,
+      `
+    top: ${props.isServicesPage && "218px"};
+    width: ${props.isServicesPage && "618px"};
+    height: ${props.isServicesPage && "837px"};
+  `,
+    )}
 
-  ${props => screen.below(bp.laptopSm, `
-    top: ${props.isServicesPage && 'unset'};
-    width: ${props.isServicesPage && '100%'};
-    height: ${props.isServicesPage && '100%'};
+  ${(props) =>
+    screen.below(
+      bp.laptopSm,
+      `
+    top: ${props.isServicesPage && "unset"};
+    width: ${props.isServicesPage && "100%"};
+    height: ${props.isServicesPage && "100%"};
     left: 0;
     bottom: 0;
-  `)}
+  `,
+    )}
 `;
 
-const ServicesList = ({
-  services = [],
-  isServicesPage,
-  className,
-}) => {
+const ServicesList = ({ services = [], isServicesPage, className }) => {
   const list = useRef();
   const lastHover = useRef(0);
+  const timeoutRef = useRef(null);
 
-  const serviceHover = (i) => {
+  const serviceHover = useCallback((i) => {
     if (!list.current) return;
 
-    const imageArray = list.current.querySelectorAll('.service-image');
+    const imageArray = list.current.querySelectorAll(".service-image");
 
     const hoverImg = imageArray[i];
-    const hoverImgImg = hoverImg.querySelector('img');
+    const hoverImgImg = hoverImg.querySelector("img");
     const lastHoverImg = imageArray[lastHover.current];
 
-    if (i !== lastHover.current) {
-      gsap.set(imageArray, { zIndex: -2 });
-      gsap.set(lastHoverImg, { zIndex: -1 });
-      gsap.set(hoverImg, { zIndex: 0 });
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      if (i !== lastHover.current) {
+        gsap.set(imageArray, { zIndex: -2 });
+        gsap.set(lastHoverImg, { zIndex: -1 });
+        gsap.set(hoverImg, { zIndex: 0 });
 
-      if (!isServicesPage) {
+        if (!isServicesPage) {
+          const tl = gsap
+            .timeline({
+              immediateRender: false,
+              onComplete: () => {
+                tl.kill();
+              },
+            })
+            .fromTo(
+              hoverImg,
+              {
+                opacity: 0,
+              },
+              {
+                opacity: 1,
+                onUpdate: () => {
+                  gsap.set(hoverImgImg, {
+                    //scale: 1 / gsap.getProperty(hoverImg, "scale"),
+                  });
+                },
+              },
+            )
+            .fromTo(hoverImg, { top: "-2%" }, { top: 0 }, "-=.6");
+        } else {
+          gsap.set([hoverImg, hoverImgImg], { transformOrigin: "0 0" });
+          gsap.fromTo(
+            hoverImg,
+            { opacity: 0 },
+            {
+              opacity: 1,
+              duration: 1,
+              ease: "sine.inOut",
+              onUpdate: () => {
+                gsap.set(hoverImgImg, {
+                  //scaleY: 1 / gsap.getProperty(hoverImg, "scaleY"),
+                });
+              },
+            },
+          );
+        }
 
-        const tl = gsap.timeline({
-          immediateRender: false,
-          onComplete: () => { tl.kill(); },
-        })
-          .fromTo(hoverImg, {
-            scale: 0.01,
-          }, {
-            scale: 1,
-            onUpdate: () => {
-              gsap.set(hoverImgImg, {
-                scale: 1 / gsap.getProperty(hoverImg, 'scale'),
-              });
-            },
-          })
-          .fromTo(hoverImg, { borderRadius: '50%' }, { borderRadius: 0 }, '-=.25');
-      } else {
-        gsap.set([hoverImg, hoverImgImg], { transformOrigin: '50% 100%' });
-        gsap.fromTo(hoverImg,
-          { scaleY: 0.01 },
-          {
-            scaleY: 1,
-            duration: 0.6,
-            ease: 'sine.inOut',
-            onUpdate: () => {
-              gsap.set(hoverImgImg, {
-                scaleY: 1 / gsap.getProperty(hoverImg, 'scaleY'),
-              });
-            },
-          });
+        lastHover.current = i;
       }
-
-      lastHover.current = i;
-    }
-  };
+    }, 95);
+  }, []);
 
   if (services?.length < 1) return null;
 
   return (
     <div ref={list}>
       <UnstyledList className={className}>
-
         {services.map((item, i) => (
           <StyledListItem key={i} isServicesPage={isServicesPage}>
-            <StyledLink onMouseEnter={() => { serviceHover(i); }} className="service-text" href={linkResolver(item?.link_url)}>
-              <ListText as={OneSixty}>{item?.name}</ListText>
+            <StyledLink
+              onMouseEnter={() => {
+                serviceHover(i);
+              }}
+              className="service-text"
+              href={linkResolver(item?.link_url)}
+            >
+              <ListText as={OneSixty}>
+                {item?.short_name ?? item?.name}
+              </ListText>
             </StyledLink>
           </StyledListItem>
         ))}
       </UnstyledList>
       {services.map((item, index) => (
-        <ImageWrapper className="service-image" isServicesPage={isServicesPage} key={index}>
+        <ImageWrapper
+          className="service-image"
+          isServicesPage={isServicesPage}
+          key={index}
+        >
           {/* Ran into the chaining linting error again here */}
           <img
             src={`${item.image.url}&w=825&h=825&fit=crop&q=85&f=center`}

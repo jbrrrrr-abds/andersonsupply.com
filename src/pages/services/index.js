@@ -54,7 +54,7 @@ const Index = ({ page }) => {
   );
 };
 
-export async function getStaticProps({ preview, previewData }) {
+export async function getStaticProps({ previewData }) {
   const fields = [
     "services_navigation.services",
     "services.link_url",
