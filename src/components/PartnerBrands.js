@@ -8,22 +8,34 @@ import { bp } from '../styles/helpers';
 import { hover } from '../styles/helpers';
 
 
-const BrandGrid = styled.ul `
+const BrandGrid = styled.ul`
   display: grid;
   gap: calc(var(--spacing));
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   width: 100%;
-  padding: calc(var(--spacing) /2);
+  padding: calc(var(--spacing) / 2);
   justify-items: center;
   align-items: center;
   margin-top: calc(var(--spacing) * -0.5);
 
-  @media screen and (width <= 1100px) {
-    grid-template-columns: repeat(4, 1fr)
+  @media screen and (width <= 1200px) {
+    grid-template-columns: repeat(5, 1fr);
   }
 
-  @media screen and (width <= 800px) {
-    grid-template-columns: repeat(2, 1fr)
+  @media screen and (width <= 1050px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media screen and (width <= 850px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (width <= 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (width <= 400px) {
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
 
@@ -40,31 +52,31 @@ const BrandBlock = styled.li`
   }
 `;
 
-const PartnerBrands = ({
-  brands = []
-}) => (
+const PartnerBrands = ({ brands = [] }) => (
   <Section hasPadding bgColor="brand-white">
-    {brands.length > 0 ?
-      <BrandGrid
-        brands={brands}
-      >
-        {brands.map((brand, index) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <BrandBlock key={index}>
-            <a href={brand?.brand_site_url?.url} title={brand?.brand_name} target={brand?.brand_site_url?.target}>
-              <img
-                src={brand?.brand_logo?.url}
-                alt={brand?.brand_name}
-                width={brand?.brand_logo?.width}
-                height={brand?.brand_logo?.height}
-              />
-            </a>
-          </BrandBlock>
-        ))}
-      </BrandGrid>
-      :
-      null
-    }
+    <div className="container">
+      {brands.length > 0 ? (
+        <BrandGrid brands={brands}>
+          {brands.map((brand, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <BrandBlock key={index}>
+              <a
+                href={brand?.brand_site_url?.url}
+                title={brand?.brand_name}
+                target={brand?.brand_site_url?.target}
+              >
+                <img
+                  src={brand?.brand_logo?.url}
+                  alt={brand?.brand_name}
+                  width={brand?.brand_logo?.width}
+                  height={brand?.brand_logo?.height}
+                />
+              </a>
+            </BrandBlock>
+          ))}
+        </BrandGrid>
+      ) : null}
+    </div>
   </Section>
 );
 
