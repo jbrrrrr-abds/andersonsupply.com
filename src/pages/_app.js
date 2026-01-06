@@ -149,11 +149,11 @@ MyApp.getInitialProps = async (ctx, previewData) => {
 
   const ids = [
     // Header
-    "aUEklxAAACUAFoYU",
+    "YJQrvBEAACEAGlk2",
     // Footer
     "YJRHIREAACEAGtZB",
     // Services Navigation
-    "aUGP2xAAACIAFy2C",
+    "YIg9ABAAACMAMUpk",
   ];
 
   const pageData = await client.get({
