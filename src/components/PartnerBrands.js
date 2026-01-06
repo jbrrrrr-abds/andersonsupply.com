@@ -10,7 +10,8 @@ import { hover } from '../styles/helpers';
 
 const BrandGrid = styled.ul`
   display: grid;
-  gap: calc(var(--spacing));
+  row-gap: var(--spacing);
+  column-gap: calc(var(--spacing) / 2);
   grid-template-columns: repeat(6, 1fr);
   width: 100%;
   padding: calc(var(--spacing) / 2);
