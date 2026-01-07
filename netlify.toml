@@ -9,11 +9,6 @@
   status = 301
 
 [[redirects]]
-  from = "/pages/our-studio-new"
-  to = "/about/"
-  status = 301
-
-[[redirects]]
   from = "/pages/our-story-new"
   to = "/about/"
   status = 301
@@ -36,11 +31,6 @@
 [[redirects]]
   from = "/pages/accessories"
   to = "/services/accessories/"
-  status = 301
-
-[[redirects]]
-  from = "/trusted_brands"
-  to = "/trusted-brands/"
   status = 301
 
 [[redirects]]
