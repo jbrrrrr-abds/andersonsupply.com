@@ -38,10 +38,15 @@ const Index = ({ page, marquee, galleryItems }) => {
           { name: "twitter:description", content: data?.page_description },
         ]}
       />
-      <Script type="text/javascript" src="//assets.pinterest.com/js/pinit.js" strategy="afterInteractive" />
+      <Script
+        type="text/javascript"
+        src="//assets.pinterest.com/js/pinit.js"
+        data-pin-hover
+        strategy="afterInteractive"
+      />
       <main>
         <Hero title={data.page_title} />
-        <GalleryHolder itemList={ galleryItems }/>
+        <GalleryHolder itemList={galleryItems} />
       </main>
       <Modal>
         <YouTubeModal youTubeID={modalOpen} />
